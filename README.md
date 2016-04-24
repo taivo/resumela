@@ -50,3 +50,7 @@ This early incarnation of resuméla is meant for developers who are (slightly) f
 2. Open `index.html` as a local file in your browser.
 3. Copy `sample-resume.json` as `your-resume.json`, edit it and use option 1 in the GUI to render.
 4. Print your resumé using browser print or generate pdf functions.
+
+Demo
+----
+[Check out the demo here](http://taivo.github.io/resumela/)
