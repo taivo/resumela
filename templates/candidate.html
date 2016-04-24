@@ -1,0 +1,30 @@
+<div layout='row' class='candidate-section'>
+  <div flex='75'>
+    <h1 class='no-margin-bottom'>{{candidate.name}}</h1>
+    <h5 class='text-primary no-margin-top'>{{candidate.brief}}</h5>
+
+    <div layout='row'>
+      <div flex>
+        <span><i class='text-primary fa fa-phone'></i> {{candidate.phone}}</span>
+      </div>
+      <div flex='40'>
+        <span><i class='text-primary fa fa-envelope-o'></i> {{candidate.email}}</span>
+      </div>
+    </div>
+
+    <div layout='row'>
+      <div flex>
+        <span><i class='text-primary fa fa-linkedin-square'></i> {{candidate.linkedin}}</span>
+      </div>
+      <div flex='40'>
+        <span><i class='text-primary fa fa-github'></i> {{candidate.github}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div flex style='position:relative;'>
+    <div ng-if='!candidate.photo' class='photo-frame'>
+      <i class='fa fa-user'></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='resumela'>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-allow-color-print.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resumela.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="resumela-app.js"></script>
+    <script src="item-directives.js"></script>
+  </head>
+  <body class='bg-success'>
+    <div style='display:flex;background-color: green;'>
+      <div style='flex:0 0 70%;border: 1px solid blue;'>
+        <div class='container'>
+          <div class='resume-body' ng-controller='ResGenController'>
+            <candidate class='' candidate='candidate'></candidate>
+          </div>
+        </div>
+      </div>
+      <div style='flex-basis:fill;border: 2px solid blue;'>
+        2
+      </div>
+    </div>
+    <div class='container'>
+      <div class='resume-body' ng-controller='ResGenController'>
+        <candidate class='row' candidate='candidate'></candidate>
+
+        <div class='row'>
+          <div class='col-sm-8 left-column'>
+            <h2 class='section-header'>EXPERIENCE</h2>
+            <job class='job-item' job='job' ng-repeat='job in jobs'></job>
+          </div>
+
+          <div class='col-sm-4'>
+            <div>
+              <h2 class='section-header'>SKILLS</h2>
+              <skill class='padding-bottom-3x' skill='skill' ng-repeat='skill in skills'></skill>
+            </div>
+
+            <div>
+              <h2 class='section-header'>EDUCATION</h2>
+              <education degree='deg' ng-repeat='deg in degrees'></education>
+            </div>
+
+            <div>
+              <h2 class='section-header'>PROJECTS</h2>
+              <project project='prj' ng-repeat='prj in projects'></project>
+            </div>
+
+            <div>
+              <h2 class='section-header'>PUBLICATIONS</h2>
+              <ul class='li-hilights'>
+                <li ng-repeat='pub in publications'>
+                  <publication publication='pub'></publication>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class='section-header'>ACHIEVEMENTS</h2>
+              <ul class='li-hilights'>
+                <li ng-repeat='a in achievements'>
+                  <achievement achievement='a'></achievement>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class='bg-success sidebar' style='height:100vh;'>
+        side panel
+      </div>
+    </div>
+  </body>
+</html>
