@@ -45,6 +45,7 @@ All templates are in the [templates](templates) directory. Here is an example fo
 Installation
 ------------
 This early incarnation of resuméla is meant for developers who are (slightly) familiar with `angularjs`. The simplest way to use it is to
+
 1. Check out this repo
 2. Open `index.html` as a local file in your browser.
 3. Copy `sample-resume.json` as `your-resume.json`, edit it and use option 1 in the GUI to render.
