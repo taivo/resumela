@@ -11,7 +11,7 @@
     <div class='app-canvas'>
       <div layout='row' ng-controller='ResGenController'>
         <div flex class='preview-area'>
-          <div class='resume-body'>
+          <div class='resume-body' ng-cloak>
             <candidate candidate='candidate'></candidate>
 
             <div layout='row' style='padding-top:20px;'>
@@ -54,19 +54,19 @@
           </div>
         </div>
 
-        <div flex='25' class='no-print control-area'>
+        <div flex='25' class='no-print control-area' ng-cloak>
           <md-toolbar>
             <div class="md-toolbar-tools">
               <span><i class='fa fa-gears'></i> Settings</span>
             </div>
           </md-toolbar>
-          <md-content class='padding-horiz-1x' ng-cloak>
+          <md-content class='padding-horiz-1x'>
             <div>
               <h4>Option 1.</h4>
               <md-input-container class='md-block'>
                 <label>resume file in same path as index.html</label>
                 <input ng-model="$storage.localRes">
-                <div ng-if='$errors.localRes' class='error'>
+                <div ng-show='$errors.localRes' class='error'>
                   Unable to load file "{{$storage.localRes}}". Make sure it's in the same path as index.html and does not contain invalid json.
                 </div>
               </md-input-container>

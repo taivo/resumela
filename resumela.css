@@ -1,13 +1,12 @@
-.app-canvas{
-  padding: 3em 1em;
-  background-color: #dff0d8;
-  min-width: 1350px;
-}
 .left-column{
   padding-right: 25px;
 }
 .right-column{
   padding-left: 25px;
+}
+
+.section{
+  page-break-inside: avoid;
 }
 .section-header{
   border-bottom:2px solid black;
@@ -16,6 +15,7 @@
 /* headings */
 h1{
   font-size: 40px;
+  margin: 10px 0;
 }
 h2{
   font-size: 28px;
@@ -94,18 +94,12 @@ h5{
   border-bottom: 1px solid #ddd;
 }
 
-
-.resume-body{
-  background-color: white;
-  padding: 3em 5em;
-  border-radius: 5px;
-  min-width: 800px;
-  max-width: 800px;
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
 }
 
 .preview-area{
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 0 2em;
 }
 .control-area{
   border: 1px solid #ddd;
@@ -120,6 +114,25 @@ h5{
   background-color: transparent;
 }
 
+.resume-body{
+  background-color: white;
+}
+
+@media screen{
+  .app-canvas{
+    padding: 3em 1em;
+    background-color: #dff0d8;
+    min-width: 1400px;
+  }
+
+  .resume-body{
+    border-radius: 5px;
+    min-width: 850px;
+    max-width: 850px;
+    padding: 4em 5em;
+  }
+}
+
 @media print{
   .no-print{
     display:none;
@@ -127,11 +140,14 @@ h5{
   .app-canvas{
     padding: 0 0;
   }
+  .preview-area{
+    padding: 0 0;
+  }
   .resume-body{
-    padding: 2em;
-    border-radius: none;
+    padding: 2em 3em;
   }
 }
+
 
 /* candidate section css */
 .candidate-section .photo-frame{
@@ -145,6 +161,9 @@ h5{
   bottom:0;right:0;
 }
 /* item css */
+.item{
+  page-break-inside: avoid;
+}
 .item .date, .item .location{
   font-size: 14px;
   display: inline-block;
