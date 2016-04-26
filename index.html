@@ -14,7 +14,7 @@
           <div class='resume-body' ng-cloak>
             <candidate candidate='candidate'></candidate>
 
-            <div layout='row' style='padding-top:20px;'>
+            <div layout='row' style='padding-top:1em;'>
               <div flex='70' class='left-column'>
                 <section header='EXPERIENCE'>
                   <job class='job-item' job='job' ng-repeat='job in jobs'></job>
@@ -26,28 +26,30 @@
                   <skill class='padding-bottom-3x' skill='skill' ng-repeat='skill in skills'></skill>
                 </section>
 
-                <section header='EDUCATION'>
-                  <education class='padding-bottom-3x' degree='deg' ng-repeat='deg in degrees'></education>
-                </section>
-
                 <section header='PROJECTS'>
                   <project project='prj' ng-repeat='prj in projects'></project>
                 </section>
 
+                <section header='EDUCATION'>
+                  <education class='padding-bottom-2x' degree='deg' ng-repeat='deg in degrees'></education>
+                </section>
+
                 <section header='PUBLICATIONS'>
-                  <ul class='li-hilights'>
+                  <!--ul class='li-hilights'>
                     <li ng-repeat='pub in publications'>
                       <publication publication='pub'></publication>
                     </li>
-                  </ul>
+                  </ul-->
+                  <publication class='padding-bottom-2x' publication='pub' ng-repeat='pub in publications'></publication>
                 </section>
 
                 <section header='ACHIEVEMENTS'>
-                  <ul class='li-hilights'>
+                  <!--ul class='li-hilights'>
                     <li ng-repeat='a in achievements'>
                       <achievement achievement='a'></achievement>
                     </li>
-                  </ul>
+                  </ul-->
+                  <achievement class='padding-bottom-2x' achievement='a' ng-repeat='a in achievements'></achievements>
                 </section>
               </div>
             </div>

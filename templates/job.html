@@ -1,20 +1,23 @@
 <div class='item job-item'>
-  <h3 class='job-title'>{{job.title}}</h3>
-  <h4 class='text-primary company-name'>{{job.company}}</h4>
+  <div class='job-title'>{{job.title}}</div>
+
+  <div class='text-primary company-name'>{{job.company}}</div>
 
   <div>
     <span class='date'><i class='fa fa-calendar'></i> {{job.fromDate}} - {{job.toDate}}</span>
     <span class='location'><i class='fa fa-map-marker'></i> {{job.location}}</span>
   </div>
 
-  <div>{{job.companyBrief}}</div>
+  <div class='note'>{{job.companyBrief}}</div>
+
   <ul class='li-hilights'>
     <li ng-repeat='bulletPoint in job.hilights'>
       <div>{{bulletPoint}}</div>
     </li>
+    <li>Skills: <span class='text-bold comma-list' ng-repeat='sk in job.skills'>{{sk}}</span></li>
   </ul>
 
-  <div>
-    <span class='used-skill' ng-repeat='sk in job.skills'>{{sk}}</span>
-  </div>
+  <!--div>
+    Skills: <span class='' ng-repeat='sk in job.skills'>{{sk}}, </span>
+  </div-->
 </div>

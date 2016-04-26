@@ -1,7 +1,7 @@
 Resuméla
 ========
 
-*Crush resumé editing like Godzilla*
+*Separating resumé style from content for faster editing. Crush editing time like Godzilla*
 
 The Problem
 -----------
@@ -9,7 +9,7 @@ Creating and editing a resumé takes too long. Most of the time  is wasted on st
 
 The Solution
 ------------
-My approach is to explicitly separate the resumé content from its style. The content is stored as json. The style is handled as angularjs templates. By editing the appropriate template, you can change where certain sections are placed and how various items are rendered, e.g., job item, education item, etc.
+Separating resumé style from content for faster editing. The content is stored in json. The style is handled as angularjs templates. By editing the appropriate template, you can change where certain sections are placed and how various items are rendered, e.g., job item, education item, etc.
 
 JSON Schema
 -----------
