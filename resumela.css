@@ -1,5 +1,6 @@
 body{
   font-size: 13px;
+  color: #333;
 }
 
 @page{
@@ -8,10 +9,10 @@ body{
   margin: 70mm 25mm;
 }
 
-.block .column:not(:last-child){
+.block.multi-column .column:not(:last-child){
   padding-right: 1em;
 }
-.block .column:not(:first-child){
+.block.multi-column .column:not(:first-child){
   padding-left: 1em;
 }
 
@@ -224,6 +225,9 @@ span.comma-list:not(:last-child):after{
 @media print{
   .no-print{
     display:none;
+  }
+  body.layout-column{
+    display:block;
   }
   .app-canvas{
     padding: 0 0;
