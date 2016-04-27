@@ -28,14 +28,14 @@
               <candidate candidate='candidate'></candidate>
             </div>
 
-            <div layout='row'>
-              <div flex='70' class='left-column'>
+            <block column-layout='slim-wide'>
+              <column>
                 <section header='EXPERIENCE'>
                   <job class='job-item' job='job' ng-repeat='job in jobs'></job>
                 </section>
-              </div>
+              </column>
 
-              <div flex class='right-column'>
+              <column>
                 <section header='SKILLS'>
                   <skill class='padding-bottom-3x' skill='skill' ng-repeat='skill in skills'></skill>
                 </section>
@@ -55,8 +55,8 @@
                 <section header='ACHIEVEMENTS'>
                   <achievement class='padding-bottom-2x' achievement='a' ng-repeat='a in achievements'></achievements>
                 </section>
-              </div>
-            </div>
+              </column>
+            </block>
           </div>
         </div>
 
@@ -114,6 +114,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script src="resumela-app.js"></script>
     <script src="item-directives.js"></script>
-    <script src="section-directive.js"></script>
+    <script src="layout-directives.js"></script>
   </body>
 </html>

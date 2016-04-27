@@ -8,10 +8,18 @@ body{
   margin: 70mm 25mm;
 }
 
+.block .column:not(:last-child){
+  padding-right: 1em;
+}
+.block .column:not(:first-child){
+  padding-left: 1em;
+}
+
 /* section css*/
 .section{
   page-break-inside: avoid;
   text-align: left;
+  width:100%;
 }
 .section-header{
   font-size:24px;

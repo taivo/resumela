@@ -1,7 +1,7 @@
 Resuméla
 ========
 
-*Separating resumé style from content for faster editing. Crush editing time like Godzilla*
+*Separate resumé style from content for faster editing. Crush editing time like Godzilla*
 
 The Problem
 -----------
