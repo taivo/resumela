@@ -191,8 +191,11 @@ span.comma-list:not(:last-child):after{
   background-color: transparent;
 }
 
-.resume-body{
+.resume-layout{
   background-color: white;
+}
+.resume-header{
+  margin-bottom: 1em;
 }
 
 @media screen{
@@ -202,7 +205,7 @@ span.comma-list:not(:last-child):after{
     min-width: 1400px;
   }
 
-  .resume-body{
+  .resume-layout{
     border-radius: 5px;
     min-width: 850px;
     max-width: 850px;
@@ -220,7 +223,7 @@ span.comma-list:not(:last-child):after{
   .preview-area{
     padding: 0 0;
   }
-  .resume-body{
+  .resume-layout{
     padding: 0 0.1em;
   }
 

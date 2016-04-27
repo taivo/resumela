@@ -7,14 +7,28 @@
     <link rel="stylesheet" href="resumela.css">
   </head>
 
-  <body>
-    <div class='app-canvas'>
+  <body layout='column'>
+    <md-toolbar class='md-tall no-print'>
+      <div layout='row' style='margin:1em 2em;'>
+        <div style='padding-right:1em;margin-right:1em;border-right:1px solid #777;'>
+          <h2>Resumela</h2>
+          <div style='font-size: 14px; color:#aaa;'>Separate resume style from content for faster editing</div>
+        </div>
+        <div ng-repeat='n in [1,2,3]' style='border:1px solid #ccc;height:100px;width: 70px;text-align:center;font-size:10px;margin-right:1em;padding:2em 0;'>
+          mock <span style='display:inline-block;'>layout {{n}}</span>
+        </div>
+      </div>
+    </md-toolbar>
+
+    <md-content class='app-canvas'>
       <div layout='row' ng-controller='ResGenController'>
         <div flex class='preview-area'>
-          <div class='resume-body' ng-cloak>
-            <candidate candidate='candidate'></candidate>
+          <div class='resume-layout' ng-cloak>
+            <div layout='column' class='resume-header'>
+              <candidate candidate='candidate'></candidate>
+            </div>
 
-            <div layout='row' style='padding-top:1em;'>
+            <div layout='row'>
               <div flex='70' class='left-column'>
                 <section header='EXPERIENCE'>
                   <job class='job-item' job='job' ng-repeat='job in jobs'></job>
@@ -35,20 +49,10 @@
                 </section>
 
                 <section header='PUBLICATIONS'>
-                  <!--ul class='li-hilights'>
-                    <li ng-repeat='pub in publications'>
-                      <publication publication='pub'></publication>
-                    </li>
-                  </ul-->
                   <publication class='padding-bottom-2x' publication='pub' ng-repeat='pub in publications'></publication>
                 </section>
 
                 <section header='ACHIEVEMENTS'>
-                  <!--ul class='li-hilights'>
-                    <li ng-repeat='a in achievements'>
-                      <achievement achievement='a'></achievement>
-                    </li>
-                  </ul-->
                   <achievement class='padding-bottom-2x' achievement='a' ng-repeat='a in achievements'></achievements>
                 </section>
               </div>
@@ -101,7 +105,7 @@
           </md-content>
         </div>
       </div>
-    </div>
+    </md-content>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
