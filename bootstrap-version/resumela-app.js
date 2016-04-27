@@ -1,7 +1,7 @@
 angular.module('resumela', [])
   .controller('ResGenController', ['$scope','$http',
   function($scope, $http) {
-    $http.get('taivo-resume.json'
+    $http.get('../user-data/taivo-resume.json'
     ).then(function successCallback(res) {
         var resume = res.data;
         $scope.candidate = resume.candidate;
