@@ -73,4 +73,12 @@ angular.module('resumela', ['ngMaterial', 'ngStorage'])
 
     $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
     $scope.renderLocalResume();
+
+    $scope.selTab = 2;
+    $scope.onSel = function(){
+      console.log('onSel', arguments);
+    }
+    $scope.$watch('selTab', function(){
+      console.log('selTab changed', arguments);
+    })
   }]);

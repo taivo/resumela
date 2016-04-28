@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang='en' ng-app='resumela'>
+<html lang='en'>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0-rc4/angular-material.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="resumela.css">
   </head>
 
-  <body layout='column'>
+  <body layout='column' ng-app='resumela'>
     <md-toolbar class='md-tall no-print'>
       <div layout='row' style='margin:1em 2em;'>
         <div style='padding-right:1em;margin-right:1em;border-right:1px solid #777;'>
@@ -27,49 +27,8 @@
           <div resume='activeResume' ng-cloak></div>
         </div>
 
-        <div flex class='no-print control-area' ng-cloak>
-          <md-toolbar>
-            <div class="md-toolbar-tools">
-              <span><i class='fa fa-gears'></i> Settings</span>
-            </div>
-          </md-toolbar>
-          <md-content class='padding-horiz-1x'>
-            <div>
-              <h4>Option 1.</h4>
-              <md-input-container class='md-block'>
-                <label>resume file in same path as index.html</label>
-                <input ng-model="$storage.localRes">
-                <div ng-show='$errors.localRes' class='error'>
-                  Unable to load file "{{$storage.localRes}}". Make sure it's in the same path as index.html and does not contain invalid json.
-                </div>
-              </md-input-container>
-              <div class='align-right'>
-                <md-button ng-click='renderSample()' style='border:1px solid #aaa;'>
-                  Render Sample
-                </md-button>
-                <md-button ng-click='renderLocalResume()' class='md-primary' style='border:1px solid #aaa;'>
-                  Render from File
-                </md-button>
-              </div>
-            </div>
-
-            <div style='margin-top: 5em;'>
-              <h4>Option 2.</h4>
-              <md-input-container class="md-block">
-                <label>Paste JSON resume here</label>
-                <textarea ng-model="jsonResInput" md-maxlength="15000" rows='15' md-select-on-focus style='height:15em;'></textarea>
-              </md-input-container>
-              <div class='align-right'>
-                <md-button ng-click='renderInputString()' class='md-primary' style='border:1px solid #aaa;'>
-                  <i class='fa fa-mail-reply'></i> Render
-                </md-button>
-
-                <md-button ng-click='pasteSample()' class='md-primary' style='border:1px solid #aaa;'>
-                  <i class='fa fa-paste'></i> Paste Sample
-                </md-button>
-              </div>
-            </div>
-          </md-content>
+        <div flex class='no-print control-area'>
+          <tool-panel></tool-panel>
         </div>
       </div>
     </md-content>
@@ -80,7 +39,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script src="resumela-app.js"></script>
-    <script src="item-directives.js"></script>
-    <script src="layout-directives.js"></script>
+    <script src="item.js"></script>
+    <script src="layout.js"></script>
+    <script src="edit-tool.js"></script>
   </body>
 </html>

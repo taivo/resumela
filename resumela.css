@@ -130,6 +130,9 @@ span.comma-list:not(:last-child):after{
 .text-bold{
   font-weight: bold;
 }
+.text-big{
+  font-size: 120%;
+}
 .bg-success {
   background-color: #dff0d8;
 }
@@ -144,6 +147,15 @@ span.comma-list:not(:last-child):after{
 }
 .no-margin-bottom{
   margin-bottom:0;
+}
+.margin-bottom-3x{
+  margin-bottom:15px;
+}
+.padding-1x{
+  padding: 5px;
+}
+.padding-2x{
+  padding: 10px;
 }
 .padding-top-1x{
   padding-top:5px;
@@ -160,10 +172,6 @@ span.comma-list:not(:last-child):after{
 .padding-right-1x{
   padding-right:5px;
 }
-.padding-horiz-1x{
-  padding-left: 5px;
-  padding-right: 5px;
-}
 .padding-bottom-1x{
   padding-bottom: 5px;
 }
@@ -172,6 +180,15 @@ span.comma-list:not(:last-child):after{
 }
 .padding-bottom-3x{
   padding-bottom: 15px;
+}
+
+.padding-horiz-1x{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.padding-vert-1x{
+  padding-top:5px;
+  padding-bottom:5px;
 }
 
 /* alignment utils */
@@ -220,15 +237,15 @@ span.comma-list:not(:last-child):after{
 
   .resume-layout{
     border-radius: 5px;
-    min-width: 850px;
-    max-width: 850px;
+    min-width: 450px;
+    max-width: 450px;
     padding: 6em;
   }
 
   .resume-layout:not(:first-child){
     margin-top: 5em;
-
   }
+
 }
 
 @media print{

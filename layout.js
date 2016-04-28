@@ -4,7 +4,6 @@ function(){
   return {
     restrict: 'A',
     replace: true,
-    transclude: true,
     scope: {
       resume:'='
     },
@@ -48,7 +47,6 @@ function(){
           return 'single';
         } else{
           var colTypes = $scope.columnLayout.split('-');
-          console.log('colTypes', colTypes);
           return colTypes[index];
         }
       }
@@ -80,7 +78,6 @@ function(){
         case 'fifty': scope.isHalf = true; break;
         default: scope.isFlex = true; break;
       }
-      console.log(columnType)
     },
   };
 }])
