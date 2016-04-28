@@ -1,15 +1,15 @@
-Resuméla
+résuméla
 ========
 
-*Separate resumé style from content for faster editing. Crush editing time like Godzilla*
+*Separate résumé style from content for faster editing. Crush editing time like Godzilla*
 
 The Problem
 -----------
-Creating and editing a resumé takes too long. Most of the time  is wasted on styling and moving stuff around so that your resumé can have the desired look. Manually moving stuff around is also an error prone process.
+Creating and editing a résumé takes too long. Most of the time  is wasted on styling and moving stuff around so that your résumé can have the desired look. Manually moving stuff around is also an error prone process.
 
 The Solution
 ------------
-Separating resumé style from content for faster editing. The content is stored in json. The style is handled as angularjs templates. By editing the appropriate template, you can change where certain sections are placed and how various items are rendered, e.g., job item, education item, etc.
+Separating résumé style from content for faster editing. The content is stored in json. The style is handled as angularjs templates. By editing the appropriate template, you can change where certain sections are placed and how various items are rendered, e.g., job item, education item, etc.
 
 JSON Schema
 -----------
@@ -44,12 +44,12 @@ All templates are in the [templates](templates) directory. Here is an example fo
 
 Installation
 ------------
-This early incarnation of resuméla is meant for developers who are (slightly) familiar with `angularjs`. The simplest way to use it is to
+This early incarnation of résuméla is meant for developers who are (slightly) familiar with `angularjs`. The simplest way to use it is to
 
 1. Check out this repo
 2. Open `index.html` as a local file in your browser.
 3. Copy `sample-resume.json` as `your-resume.json`, edit it and use option 1 in the GUI to render.
-4. Print your resumé using browser print or generate pdf functions.
+4. Print your résumé using browser print or generate pdf functions.
 
 Demo
 ----

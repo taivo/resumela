@@ -16,6 +16,17 @@ angular.module('resumela', ['ngMaterial', 'ngStorage'])
         $scope.projects = resume.projects;
         $scope.publications = resume.publications;
         $scope.achievements = resume.achievements;
+
+
+        $scope.activeResume = {
+          candidate: $scope.candidate,
+          jobs: $scope.jobs,
+          skills: $scope.skills,
+          degrees: $scope.degrees,
+          projects: $scope.projects,
+          publications: $scope.publications,
+          achievements: $scope.achievements
+        }
       }
     }
     $scope.$errors = {};

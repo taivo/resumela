@@ -1,4 +1,16 @@
 angular.module('resumela')
+.directive('resume', [
+function(){
+  return {
+    restrict: 'A',
+    replace: true,
+    transclude: true,
+    scope: {
+      resume:'='
+    },
+    templateUrl: 'templates/resume.html'
+  };
+}])
 .directive('section', [
 function(){
   return {

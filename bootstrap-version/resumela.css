@@ -23,6 +23,10 @@ body{
 .left-column{
   padding-right: 30px;
 }
+
+.resume-layout:not(:first-child){
+  page-break-before: always;
+}
 .section-header{
   border-bottom:2px solid black;
 }
@@ -33,23 +37,6 @@ body{
   padding-bottom: 3em;
   border-radius: 5px;
 }
-
-/*
-@media screen{
-  .resume-body{
-    display: flex;
-  }
-  .sidebar{
-    width: 20%;
-  }
-}
-
-@media print{
-  .sidebar{
-    display:none;
-  }
-}
-*/
 
 /* job item css */
 .job-item{

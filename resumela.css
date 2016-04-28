@@ -83,6 +83,10 @@ body{
   font-weight:bold;
 }
 
+.skill-item{
+  margin: 1em 0;
+}
+
 
 .left-column{
   padding-right: 1em;
@@ -220,6 +224,11 @@ span.comma-list:not(:last-child):after{
     max-width: 850px;
     padding: 6em;
   }
+
+  .resume-layout:not(:first-child){
+    margin-top: 5em;
+
+  }
 }
 
 @media print{
@@ -237,6 +246,7 @@ span.comma-list:not(:last-child):after{
   }
   .resume-layout{
     padding: 0 0.1em;
+    page-break-after: always;
   }
 
   .item .date, .item .location, .item .note{

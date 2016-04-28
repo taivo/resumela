@@ -12,7 +12,7 @@
     <md-toolbar class='md-tall no-print'>
       <div layout='row' style='margin:1em 2em;'>
         <div style='padding-right:1em;margin-right:1em;border-right:1px solid #777;'>
-          <h2>Resumela</h2>
+          <h2>R&eacute;sum&eacute;la Demo</h2>
           <div style='font-size: 14px; color:#aaa;'>Separate resume style from content for faster editing</div>
         </div>
         <div ng-repeat='n in [1,2,3]' style='border:1px solid #ccc;height:100px;width: 70px;text-align:center;font-size:10px;margin-right:1em;padding:2em 0;'>
@@ -23,46 +23,11 @@
 
     <md-content class='app-canvas'>
       <div layout='row' ng-controller='ResGenController'>
-        <div flex class='preview-area'>
-          <div class='resume-layout' ng-cloak>
-            <div layout='column' class='resume-header'>
-              <candidate candidate='candidate'></candidate>
-            </div>
-
-            <!-- column-layout: single, wide-slim, slim-wide, fifty-fifty -->
-            <block column-layout='wide-slim'>
-              <column>
-                <section header='EXPERIENCE'>
-                  <job class='job-item' job='job' ng-repeat='job in jobs'></job>
-                </section>
-              </column>
-
-              <column>
-                <section header='SKILLS'>
-                  <skill class='padding-bottom-3x' skill='skill' ng-repeat='skill in skills'></skill>
-                </section>
-
-                <section header='PROJECTS'>
-                  <project project='prj' ng-repeat='prj in projects'></project>
-                </section>
-
-                <section header='EDUCATION'>
-                  <education class='padding-bottom-2x' degree='deg' ng-repeat='deg in degrees'></education>
-                </section>
-
-                <section header='PUBLICATIONS'>
-                  <publication class='padding-bottom-2x' publication='pub' ng-repeat='pub in publications'></publication>
-                </section>
-
-                <section header='ACHIEVEMENTS'>
-                  <achievement class='padding-bottom-2x' achievement='a' ng-repeat='a in achievements'></achievements>
-                </section>
-              </column>
-            </block>
-          </div>
+        <div class='preview-area'>
+          <div resume='activeResume' ng-cloak></div>
         </div>
 
-        <div flex='25' class='no-print control-area' ng-cloak>
+        <div flex class='no-print control-area' ng-cloak>
           <md-toolbar>
             <div class="md-toolbar-tools">
               <span><i class='fa fa-gears'></i> Settings</span>
