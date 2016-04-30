@@ -1,6 +1,6 @@
-angular.module('resumela', ['ngMaterial', 'ngStorage'])
-  .controller('ResGenController', ['$scope','$http','$localStorage',
-  function($scope, $http, $localStorage) {
+angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
+  .controller('ResGenController', ['$scope','$localStorage', 'resumeManager',
+  function($scope, $localStorage, resumeManager) {
     var Helper = {
       renderResume: function(resume){
         $scope.candidate = resume.candidate;
@@ -33,6 +33,11 @@ angular.module('resumela', ['ngMaterial', 'ngStorage'])
 
     $scope.renderLocalResume = function(){
       if($scope.$storage.localRes){
+        resumeManager.loadFromLocalFile($scope.$storage.localRes)
+        .then(function(activeResume){
+          Helper.renderResume(activeResume);
+        });
+        /*
         $http.get($scope.$storage.localRes
         ).then(function successCallback(res) {
           Helper.renderResume(res.data);
@@ -40,6 +45,7 @@ angular.module('resumela', ['ngMaterial', 'ngStorage'])
           }, function errorCallback(res) {
             $scope.$errors.localRes = true;
           });
+          */
       }
     }
 

@@ -1,9 +1,9 @@
-<div>
+<div class='tool-panel'>
   <div class='border-bottom-light' style='padding: 2em 0.5em;'>
     <md-button class='md-primary'>* Reset demo and use sample resume *</md-button>
   </div>
 
-  <md-tabs md-dynamic-height>
+  <md-tabs md-dynamic-height md-selected='selectedTab'>
     <md-tab label='Content'>
       <md-content class='padding-2x'>
         <div class='padding-top-3x'>
@@ -12,8 +12,9 @@
             To edit your own resume, clone <a href='https://github.com/taivo/resumela'>https://github.com/taivo/resumela.git</a>
             and open "index.html" as a local file. Then use "Load Resume"
           </div>
+
           <md-input-container class='md-block'>
-            <label>resume file in same path as index.html</label>
+            <label>Local resume file, relative to index.html</label>
             <input ng-model="$storage.localRes">
             <div ng-show='$errors.localRes' class='error'>
               Unable to load file "{{$storage.localRes}}". Make sure it's in the same path as index.html and does not contain invalid json.
@@ -25,6 +26,7 @@
             </div>
           </md-input-container>
 
+          <json-display object='activeResume'></json-display>
 
         </div>
 

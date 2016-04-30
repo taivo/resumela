@@ -237,8 +237,8 @@ span.comma-list:not(:last-child):after{
 
   .resume-layout{
     border-radius: 5px;
-    min-width: 450px;
-    max-width: 450px;
+    min-width: 850px;
+    max-width: 850px;
     padding: 6em;
   }
 
@@ -262,7 +262,7 @@ span.comma-list:not(:last-child):after{
     padding: 0 0;
   }
   .resume-layout{
-    padding: 0 0.1em;
+    padding: 0 0.2em;
     page-break-after: always;
   }
 
@@ -296,4 +296,22 @@ input[type='range']::-webkit-slider-thumb {
 }
 .text-small{
   font-size: 12px;
+}
+
+/* json-display css */
+.ng-json-display{
+  border: solid 1px #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  height: 35em;
+  overflow: scroll;
+}
+.json-key {
+  color: brown;
+}
+.json-value {
+  color: navy;
+}
+.json-string {
+  color: olive;
 }

@@ -1,16 +1,16 @@
 angular.module('resumela')
-.directive('toolPanel', [
-function(){
+.directive('toolPanel', ['resumeManager',
+function(resumeManager){
   return {
     restrict: 'E',
-    //replace: true,
+    replace: true,
     scope: {},
     templateUrl: 'templates/tool-panel.html',
-    link: function(scope, elm, attrs){
-      scope.selectedTab = 1;
-      console.log('selected tab', scope.selectedTab);
-
-    }
+    controller: ['$scope', '$localStorage', function($scope, $localStorage){
+      $scope.selectedTab = 0;
+      $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
+      $scope.activeResume = resumeManager.activeResume();
+    }]
   };
 }])
 ;
