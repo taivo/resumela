@@ -1,4 +1,16 @@
 angular.module('resumela')
+/*.directive('item', [
+function(){
+  return {
+    restrict: 'E',
+    replace: true,
+    templateUrl: 'templates/item.html',
+    scope: {
+      itemType: '='
+    }
+  }
+}])
+*/
 .directive('job', [
 function(){
   return {
@@ -7,7 +19,7 @@ function(){
     templateUrl: 'templates/job.html',
     scope: {
       job: '='
-    }
+    },
   };
 }])
 .directive('candidate', [

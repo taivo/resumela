@@ -1,31 +1,44 @@
 angular.module('resumela')
 .factory('resumeManager', ['$http', '$q',function($http, $q){
   var DATA = {
-    activeResume: {}
+    activeResume: {
+      getItems: function(sectionTitle){
+        var section = sectionTitle.toLowerCase();
+        return this[section];
+      }
+    }
   };
-  console.log('resumeManager');
+
+  var Helper = {
+    standardize: function(rawResume){
+      var skill100_to_skill10 = function(sk){
+        //
+        // skill score is 1--10 in resume. multiply 10 for use with slider
+        return angular.extend({}, sk, {score: 10 * Number(sk.score)});
+      };
+
+      return angular.extend({
+        jobs: rawResume.experience,
+        degrees: rawResume.education
+      }, rawResume, {
+        skills: rawResume.skills.map(skill100_to_skill10)
+      });
+    }
+  }
+
   return {
     loadFromLocalFile: function(localFilename){
       return $http.get(localFilename)
       .then(function successCallback(res) {
-        angular.extend(DATA.activeResume, res.data);
-console.log('resume loadeddddd')
+        angular.extend(DATA.activeResume, Helper.standardize(res.data));
+
         return DATA.activeResume;
         }, function errorCallback(res) {
           $scope.$errors.localRes = true;
         });
       },
-    /*fetchActiveResume: function(){
-      var deferred = $q.defer();
-
-      if(DATA.activeResume){
-        deferred.resolve(DATA.activeResume);
-      } else{
-
-      }
-    },
-    */
     activeResume: function(){
+      console.log('activeResume', DATA.activeResume);
       return DATA.activeResume;
     }
   }

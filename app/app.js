@@ -1,51 +1,14 @@
 angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
   .controller('ResGenController', ['$scope','$localStorage', 'resumeManager',
   function($scope, $localStorage, resumeManager) {
-    var Helper = {
-      renderResume: function(resume){
-        $scope.candidate = resume.candidate;
-        $scope.jobs = resume.experience;
-        $scope.skills = resume.skills.map(function(sk){
-          //
-          // skill score is 1--10 in resume.
-          // multiply 10 for use with slider
-          return angular.extend({}, sk, {score: 10 * Number(sk.score)});
-        });
-
-        $scope.degrees = resume.education;
-        $scope.projects = resume.projects;
-        $scope.publications = resume.publications;
-        $scope.achievements = resume.achievements;
-
-
-        $scope.activeResume = {
-          candidate: $scope.candidate,
-          jobs: $scope.jobs,
-          skills: $scope.skills,
-          degrees: $scope.degrees,
-          projects: $scope.projects,
-          publications: $scope.publications,
-          achievements: $scope.achievements
-        }
-      }
-    }
     $scope.$errors = {};
 
     $scope.renderLocalResume = function(){
       if($scope.$storage.localRes){
         resumeManager.loadFromLocalFile($scope.$storage.localRes)
         .then(function(activeResume){
-          Helper.renderResume(activeResume);
+          $scope.activeResume = activeResume;
         });
-        /*
-        $http.get($scope.$storage.localRes
-        ).then(function successCallback(res) {
-          Helper.renderResume(res.data);
-          $scope.$errors.localRes = false;
-          }, function errorCallback(res) {
-            $scope.$errors.localRes = true;
-          });
-          */
       }
     }
 
@@ -80,11 +43,18 @@ angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
     $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
     $scope.renderLocalResume();
 
-    $scope.selTab = 2;
-    $scope.onSel = function(){
-      console.log('onSel', arguments);
+
+    //
+    // tinkering with json layout
+    $scope.layout1 = {
+      "header":{},
+      "blocks":[
+        {
+          "columnLayout": "wide-slim",
+          "columns": [["EXPERIENCE"],
+                      ["SKILLS", "PROJECTS", "EDUCATION", "PUBLICATIONS", "ACHIEVEMENTS"]
+                    ]
+        }
+      ]
     }
-    $scope.$watch('selTab', function(){
-      console.log('selTab changed', arguments);
-    })
   }]);

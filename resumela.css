@@ -88,13 +88,6 @@ body{
 }
 
 
-.left-column{
-  padding-right: 1em;
-}
-.right-column{
-  padding-left: 1em;
-}
-
 /* headings */
 h1{
   font-size: 40px;

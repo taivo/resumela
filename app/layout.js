@@ -5,7 +5,8 @@ function(){
     restrict: 'A',
     replace: true,
     scope: {
-      resume:'='
+      resume:'=',
+      resumeLayout:'='
     },
     templateUrl: 'templates/resume.html'
   };
@@ -17,9 +18,13 @@ function(){
     replace: true,
     transclude: true,
     scope: {
-      header: '@'
+      header: '=',
+      items: '='
     },
     templateUrl: 'templates/section.html',
+    //link: function(scope, elm, attrs){
+    //  console.log('scope.items', scope.items);
+    //}
   };
 }])
 .directive('block', [

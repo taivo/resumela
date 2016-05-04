@@ -1,34 +1,43 @@
 <div class='resume-layout'>
-  <div layout='column' class='resume-header'>
+  <block column-layout='single' class='resume-header'>
     <candidate candidate='resume.candidate'></candidate>
-  </div>
+  </block>
+
+  <block column-layout='blk.columnLayout' ng-repeat='blk in resumeLayout.blocks'>
+    <column ng-repeat='sectionList in blk.columns'>
+      <section header='title' items='resume.getItems(title)' ng-repeat='title in sectionList'></section>
+    </column>
+  </block>
+
+
+
 
   <!-- column-layout: single, wide-slim, slim-wide, fifty-fifty -->
   <block column-layout='wide-slim'>
     <column>
-      <section header='EXPERIENCE'>
+      <section header='"EXPERIENCE"'>
         <job class='job-item' job='job' ng-repeat='job in resume.jobs'></job>
       </section>
     </column>
 
     <column>
-      <section header='SKILLS'>
+      <section header='"SKILLS"'>
         <skill skill='skill' ng-repeat='skill in resume.skills'></skill>
       </section>
 
-      <section header='PROJECTS'>
+      <section header='"PROJECTS"'>
         <project project='prj' ng-repeat='prj in resume.projects'></project>
       </section>
 
-      <section header='EDUCATION'>
+      <section header='"EDUCATION"'>
         <education class='padding-bottom-2x' degree='deg' ng-repeat='deg in resume.degrees'></education>
       </section>
 
-      <section header='PUBLICATIONS'>
+      <section header='"PUBLICATIONS"'>
         <publication class='padding-bottom-2x' publication='pub' ng-repeat='pub in resume.publications'></publication>
       </section>
 
-      <section header='ACHIEVEMENTS'>
+      <section header='"ACHIEVEMENTS"'>
         <achievement class='padding-bottom-2x' achievement='a' ng-repeat='a in resume.achievements'></achievement>
       </section>
     </column>
