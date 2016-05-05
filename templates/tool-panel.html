@@ -4,6 +4,13 @@
   </div>
 
   <md-tabs md-dynamic-height md-selected='selectedTab'>
+    <md-tab label='Layouts'>
+      <md-content class='padding-2x'>
+        <ul style='list-style-type:none;'>
+          <li ng-repeat='(k,v) in activeResume.versions'><md-button class='md-primary border-light' ng-click='switchVersion(k)'>{{k}}</md-button></li>
+        </ul>
+      </md-content>
+    </md-tab>
     <md-tab label='Content'>
       <md-content class='padding-2x'>
         <div class='padding-top-3x'>
@@ -22,13 +29,6 @@
 
         </div>
 
-      </md-content>
-    </md-tab>
-    <md-tab label='Layouts'>
-      <md-content class='padding-2x'>
-        <ul style='list-style-type:none;'>
-          <li ng-repeat='(k,v) in activeResume.versions'><md-button class='md-primary border-light' ng-click='switchVersion(k)'>{{k}}</md-button></li>
-        </ul>
       </md-content>
     </md-tab>
     <md-tab label='Help'>

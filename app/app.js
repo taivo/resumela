@@ -12,7 +12,10 @@ angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
       }
     }
 
+    $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
+    $scope.renderLocalResume();
 
+    /*
     $scope.renderInputString = function(){
       if($scope.jsonResInput){
         var resume = JSON.parse($scope.jsonResInput);
@@ -35,7 +38,5 @@ angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
           });
       }
     }
-
-    $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
-    $scope.renderLocalResume();
+    */
   }]);

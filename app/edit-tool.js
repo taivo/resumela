@@ -7,7 +7,7 @@ function(resumeManager){
     scope: {},
     templateUrl: 'templates/tool-panel.html',
     controller: ['$scope', '$localStorage', function($scope, $localStorage){
-      $scope.selectedTab = 1;
+      $scope.selectedTab = 0;
       $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
       $scope.activeResume = resumeManager.activeResume();
 
