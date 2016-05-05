@@ -1,26 +1,37 @@
 angular.module('resumela')
-/*.directive('item', [
+.directive('item', [
 function(){
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'templates/item.html',
+    template: '<ng-include src="getTemplateUrl()" />',
     scope: {
+      item : '=',
       itemType: '='
-    }
-  }
-}])
-*/
-.directive('job', [
-function(){
-  return {
-    restrict: 'E',
-    replace: true,
-    templateUrl: 'templates/job.html',
-    scope: {
-      job: '='
     },
-  };
+    controller: ['$scope', function($scope){
+      var itemTypeToTag = function(itemType){
+        var lower = itemType.toLowerCase();
+
+        var typeToTag = {
+          experience: 'job',
+          skills: 'skill',
+          projects: 'project',
+          education: 'education',
+          publications: 'publication',
+          achievements: 'achievement'
+        }
+        return typeToTag[lower] || lower;
+      }
+
+      $scope.getTemplateUrl = function(){
+        var itemTag = itemTypeToTag($scope.itemType);
+
+        var templateUrl = ['templates/items/',itemTag, '.html'].join('');
+        return templateUrl;
+      }
+    }]
+  }
 }])
 .directive('candidate', [
 function(){
@@ -30,61 +41,6 @@ function(){
     templateUrl: 'templates/candidate.html',
     scope: {
       candidate: '='
-    }
-  };
-}])
-.directive('skill', [
-function(){
-  return {
-    restrict: 'E',
-    replace: true,
-    templateUrl: 'templates/skill.html',
-    scope: {
-      skill:'='
-    }
-  };
-}])
-.directive('education', [
-function(){
-  return {
-    restrict: 'E',
-    replace: true,
-    templateUrl: 'templates/education.html',
-    scope: {
-      degree:'='
-    }
-  };
-}])
-.directive('project', [
-function(){
-  return {
-    restrict: 'E',
-    replace: true,
-    templateUrl: 'templates/project.html',
-    scope: {
-      project:'='
-    }
-  };
-}])
-.directive('publication', [
-function(){
-  return {
-    restrict: 'E',
-    replace: true,
-    templateUrl: 'templates/publication.html',
-    scope: {
-      publication:'='
-    }
-  };
-}])
-.directive('achievement', [
-function(){
-  return {
-    restrict: 'E',
-    replace: true,
-    templateUrl: 'templates/achievement.html',
-    scope: {
-      achievement:'='
     }
   };
 }])

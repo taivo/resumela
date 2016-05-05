@@ -38,7 +38,6 @@ angular.module('resumela')
         });
       },
     activeResume: function(){
-      console.log('activeResume', DATA.activeResume);
       return DATA.activeResume;
     }
   }

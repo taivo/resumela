@@ -14,15 +14,7 @@
   </thead>
   <tbody>
     <tr>
-      <td ng-switch='header'>
-        <ng-transclude></ng-transclude>
-        <!--job ng-switch-when='EXPERIENCE' job='item' ng-repeat='item in items'></job>
-        <skill ng-switch-when='SKILLS' skill='skill' ng-repeat='skill in resume.skills'></skill>
-        <project ng-switch-when='PROJECTS' project='prj' ng-repeat='prj in resume.projects'></project>
-        <education ng-switch-when='EDUCATION' class='padding-bottom-2x' degree='deg' ng-repeat='deg in resume.degrees'></education>
-        <publication ng-switch-when='PUBLICATIONS' class='padding-bottom-2x' publication='pub' ng-repeat='pub in resume.publications'></publication>
-        <achievement ng-switch-when='ACHIEVEMENTS' class='padding-bottom-2x' achievement='a' ng-repeat='a in resume.achievements'></achievement-->
-      </td>
+      <td><item item='item' item-type='header' ng-repeat='item in items'></item></td>
     </tr>
   </tbody>
 </table>

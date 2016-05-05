@@ -3,7 +3,7 @@
     <candidate candidate='resume.candidate'></candidate>
   </block>
 
-  <block column-layout='blk.columnLayout' ng-repeat='blk in resumeLayout.blocks'>
+  <block column-layout='{{blk.columnLayout}}' ng-repeat='blk in resumeLayout.blocks'>
     <column ng-repeat='sectionList in blk.columns'>
       <section header='title' items='resume.getItems(title)' ng-repeat='title in sectionList'></section>
     </column>
@@ -11,35 +11,18 @@
 
 
 
-
   <!-- column-layout: single, wide-slim, slim-wide, fifty-fifty -->
   <block column-layout='wide-slim'>
     <column>
-      <section header='"EXPERIENCE"'>
-        <job class='job-item' job='job' ng-repeat='job in resume.jobs'></job>
-      </section>
+      <section header='"EXPERIENCE"' items='resume.jobs'></section>
     </column>
 
     <column>
-      <section header='"SKILLS"'>
-        <skill skill='skill' ng-repeat='skill in resume.skills'></skill>
-      </section>
-
-      <section header='"PROJECTS"'>
-        <project project='prj' ng-repeat='prj in resume.projects'></project>
-      </section>
-
-      <section header='"EDUCATION"'>
-        <education class='padding-bottom-2x' degree='deg' ng-repeat='deg in resume.degrees'></education>
-      </section>
-
-      <section header='"PUBLICATIONS"'>
-        <publication class='padding-bottom-2x' publication='pub' ng-repeat='pub in resume.publications'></publication>
-      </section>
-
-      <section header='"ACHIEVEMENTS"'>
-        <achievement class='padding-bottom-2x' achievement='a' ng-repeat='a in resume.achievements'></achievement>
-      </section>
+      <section header='"SKILLS"' items='resume.skills'></section>
+      <section header='"PROJECTS"' items='resume.projects'></section>
+      <section header='"EDUCATION"' items='resume.degrees'></section>
+      <section header='"PUBLICATIONS"' items='resume.publications'></section>
+      <section header='"ACHIEVEMENTS"' items='resume.achievements'></section>
     </column>
   </block>
 </div>

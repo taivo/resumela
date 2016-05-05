@@ -22,9 +22,6 @@ function(){
       items: '='
     },
     templateUrl: 'templates/section.html',
-    //link: function(scope, elm, attrs){
-    //  console.log('scope.items', scope.items);
-    //}
   };
 }])
 .directive('block', [
