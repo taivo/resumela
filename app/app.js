@@ -12,10 +12,6 @@ angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
       }
     }
 
-    $scope.renderSample = function(){
-      $scope.$storage.localRes = 'sample-resume.json';
-      $scope.renderLocalResume();
-    }
 
     $scope.renderInputString = function(){
       if($scope.jsonResInput){
@@ -42,19 +38,4 @@ angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
 
     $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
     $scope.renderLocalResume();
-
-
-    //
-    // tinkering with json layout
-    $scope.layout1 = {
-      "header":{},
-      "blocks":[
-        {
-          "columnLayout": "wide-slim",
-          "columns": [["EXPERIENCE"],
-                      ["SKILLS", "PROJECTS", "EDUCATION", "PUBLICATIONS", "ACHIEVEMENTS"]
-                    ]
-        }
-      ]
-    }
   }]);

@@ -18,7 +18,7 @@ function(){
     replace: true,
     transclude: true,
     scope: {
-      header: '=',
+      header: '@',
       items: '='
     },
     templateUrl: 'templates/section.html',

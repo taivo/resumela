@@ -5,6 +5,42 @@ angular.module('resumela')
       getItems: function(sectionTitle){
         var section = sectionTitle.toLowerCase();
         return this[section];
+      },
+      _activeVersion: null,
+      initActiveVersion: function(){
+        this._activeVersion = null;
+      },
+      getActiveVersion: function(){
+        var self = this;
+        if(!self._activeVersion){
+          var versionNames = Object.keys(self.versions);
+
+          //
+          // find default version specified by resume
+          versionNames.forEach(function(versionName){
+            if(self.versions[versionName].default){
+              self._activeVersion = versionName;
+            }
+          });
+
+          //
+          // if no default version specified, take the first one
+          if(!self._activeVersion){
+            self._activeVersion = versionNames[0];
+          }
+        }
+        return self.versions[self._activeVersion];
+      },
+      getActiveLayout: function(){
+        return this.getActiveVersion().layout;
+      },
+      switchVersion: function(versionName){
+        if(this.versions[versionName]){
+          this.getActiveVersion().default = false;
+
+          this.versions[versionName].default = true;
+          this._activeVersion = versionName;
+        }
       }
     }
   };
@@ -32,11 +68,15 @@ angular.module('resumela')
       .then(function successCallback(res) {
         angular.extend(DATA.activeResume, Helper.standardize(res.data));
 
+        DATA.activeResume.initActiveVersion();
+        DATA.activeResume.getActiveLayout();
+
         return DATA.activeResume;
         }, function errorCallback(res) {
           $scope.$errors.localRes = true;
         });
       },
+
     activeResume: function(){
       return DATA.activeResume;
     }

@@ -70,5 +70,48 @@
   "achievements":[
     {"brief": "Recently won hand stand contest against cocky 5 year olds"},
     {"brief": "I once pushed a photon so fast, it moved at the speed of light"}
-  ]
+  ],
+  "versions":{
+    "fifty-fifty":{
+      "merges":{},
+      "layout":{
+        "header":{},
+        "blocks":[
+          {
+            "columnLayout": "fifty-fifty",
+            "columns": [["EXPERIENCE"],
+                        ["SKILLS", "PROJECTS", "EDUCATION", "PUBLICATIONS", "ACHIEVEMENTS"]
+                      ]
+          }
+        ]
+      }
+    },
+    "wide-slim":{
+      "default": true,
+      "layout":{
+        "header":{},
+        "blocks":[
+          {
+            "columnLayout": "wide-slim",
+            "columns": [["EXPERIENCE"],
+                        ["SKILLS","PROJECTS", "EDUCATION", "PUBLICATIONS","ACHIEVEMENTS"]
+                      ]
+          }
+        ]
+      }
+    },
+    "slim-wide":{
+      "layout":{
+        "header":{},
+        "blocks":[
+          {
+            "columnLayout": "slim-wide",
+            "columns": [["PROJECTS", "EDUCATION", "ACHIEVEMENTS"],
+                        ["EXPERIENCE"]
+                      ]
+          }
+        ]
+      }
+    }
+  }
 }
