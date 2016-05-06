@@ -145,6 +145,9 @@ span.comma-list:not(:last-child):after{
 .no-margin-bottom{
   margin-bottom:0;
 }
+.margin-left-3x{
+  margin-left: 15px;
+}
 .margin-bottom-3x{
   margin-bottom:15px;
 }
