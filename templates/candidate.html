@@ -23,8 +23,9 @@
   </div>
 
   <div flex style='position:relative;'>
-    <div ng-if='!candidate.photo' class='photo-frame'>
-      <i class='fa fa-user'></i>
+    <div class='photo-frame'>
+      <div ng-if='!candidate.photo' class='photo-placeholder'><i class='fa fa-user'></i></div>
+      <img ng-if='candidate.photo' ng-src='{{candidate.photo}}'/>
     </div>
   </div>
 </div>
