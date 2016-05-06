@@ -87,6 +87,10 @@ body{
   margin: 1em 0;
 }
 
+.education-item, .publication-item, .achievement-item{
+  margin-bottom: 0.6em;
+}
+
 
 /* headings */
 h1{
