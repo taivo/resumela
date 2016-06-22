@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-    <link rel="stylesheet" href="resumela.css">
+    <link rel="stylesheet" href="assets/css/resumela.css">
   </head>
 
   <body layout='column' ng-app='resumela'>
@@ -39,9 +39,16 @@
     <script src="https://gitcdn.xyz/repo/taivo/ng-json-display/master/dist/ng-json-display.min.js"></script>
 
     <script src="app/app.js"></script>
-    <script src="app/item.js"></script>
-    <script src="app/layout.js"></script>
-    <script src="app/edit-tool.js"></script>
-    <script src="app/services.js"></script>
+
+    <script src="app/shared/services/resumeManagerService.js"></script>
+
+    <script src="app/shared/layout/resumeDirective.js"></script>
+    <script src="app/shared/layout/sectionDirective.js"></script>
+    <script src="app/shared/layout/blockDirective.js"></script>
+    <script src="app/shared/layout/columnDirective.js"></script>
+    
+    <script src="app/shared/item/itemDirective.js"></script>
+    <script src="app/shared/item/candidateItemDirective.js"></script>
+    <script src="app/components/toolPanel/toolPanelDirective.js"></script>
   </body>
 </html>
