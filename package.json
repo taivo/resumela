@@ -1,0 +1,39 @@
+{
+  "name": "resumela",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Separate resume style from content for faster editing",
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js --single-run",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taivo/resumela.git"
+  },
+  "keywords": [
+    "resume",
+    "resume-editor"
+  ],
+  "author": "taivo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taivo/resumela/issues"
+  },
+  "homepage": "https://github.com/taivo/resumela#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "browserify": "^13.0.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.5",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-requirejs": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "requirejs": "^2.2.0",
+    "watchify": "^3.7.0"
+  }
+}

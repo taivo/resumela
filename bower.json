@@ -1,0 +1,32 @@
+{
+  "name": "resumela",
+  "version":"0.1.0",
+  "description": "Separate resume style from content for faster editing",
+  "main": "",
+  "authors": [
+    "taivo"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "resume",
+    "resume-editor"
+  ],
+  "homepage": "https://github.com/taivo/resumela",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.7",
+    "angular-material": "1.0.9",
+    "ngstorage": "0.3.10",
+    "ng-json-display": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.7"
+  }
+}
