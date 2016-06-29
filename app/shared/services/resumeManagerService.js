@@ -73,7 +73,7 @@ angular.module('resumela')
 
         return DATA.activeResume;
         }, function errorCallback(res) {
-          $scope.$errors.localRes = true;
+          console.error('error: ' + JSON.stringify(res));
         });
       },
 

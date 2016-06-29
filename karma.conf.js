@@ -12,6 +12,10 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
+    //plugins: [
+    //    'karma-ng-html2js-preprocessor'
+    //],
+
 
     // list of files / patterns to load in the browser
     files: [
@@ -30,22 +34,45 @@ module.exports = function(config) {
       {
          pattern:  'assets/samples/*.json',
          served:   true,
-         included: false,
-         watched:false
-      }
+         included: true,
+         watched:  false
+     },
+
+      //html
+      'templates/**/*.html'
     ],
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      //'assets/libs/angular/*.js': [ 'browserify' ],
-      //'assets/libs/angular-mocks/*.js': [ 'browserify']
+      "templates/**/*.html": "ng-html2js",
+      "assets/samples/*.json": "json_fixtures"
+    },
+
+    ngHtml2JsPreprocessor: {
+      //stripPrefix: 'public/',
+      //stripSuffix: '.ext',
+
+      // - setting this option will create only a single module that contains templates
+      //   from all the files, so you can load them all with module('foo')
+      // - you may provide a function(htmlPath, originalPath) instead of a string
+      //   if you'd like to generate modules dynamically
+      //   htmlPath is a originalPath stripped and/or prepended
+      //   with all provided suffixes and prefixes
+      moduleName: 'test-templates',
+    },
+    jsonFixturesPreprocessor: {
+      // prependPrefix: 'mock/',
+      // change the global fixtures variable name
+      // variableName: '__mocks__',
+      // camelize fixture filenames (e.g 'fixtures/aa-bb_cc.json' becames __fixtures__['fixtures/aaBbCc'])
+      stripPrefix: 'assets/',
+      camelizeFilenames: true,
     },
 
 
@@ -74,7 +101,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

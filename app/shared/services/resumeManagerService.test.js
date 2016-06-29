@@ -1,27 +1,25 @@
 describe("resumeManagerService", function() {
    var resumeManagerService, $httpBackend;
+   var sampleResumeFixture = 'samples/sampleResume';
 
-   var sampleResumeFile = '/base/assets/samples/sample-resume.json';
-
-   function syncGetFile(method, url, data, headers, params){
-      var req = new XMLHttpRequest();
-      req.open('GET', url, false);
-      req.send(null);
-      return [req.status, req.response];
+   function getFixture(key){
+       return window.__fixtures__[key];
    }
 
+   beforeEach(module('resumela'));
+
    beforeEach(function(){
-      module('resumela');
       inject(function(resumeManager, _$httpBackend_){
          resumeManagerService = resumeManager;
          $httpBackend = _$httpBackend_;
 
-         $httpBackend.whenGET(sampleResumeFile).respond(syncGetFile);
-      })
+         $httpBackend.whenGET(sampleResumeFixture)
+                     .respond(200, getFixture(sampleResumeFixture));
+     });
    });
 
    it("loads a local resume into activeResume", function(done) {
-      resumeManagerService.loadFromLocalFile(sampleResumeFile).then(
+      resumeManagerService.loadFromLocalFile(sampleResumeFixture).then(
          function(res){
             var activeResume = resumeManagerService.activeResume();
             expect(activeResume.jobs.length, "boo").toBeGreaterThan(0, "minimum job entries");

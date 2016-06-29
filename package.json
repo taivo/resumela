@@ -30,6 +30,8 @@
     "karma-browserify": "^5.0.5",
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
+    "karma-json-fixtures-preprocessor": "0.0.6",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-requirejs": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.7",
