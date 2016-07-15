@@ -1,7 +1,8 @@
 {
   "candidate": {
-    "name": "Codius Maximus",
-    "brief": "I don't always eat your lunch, but when I do, I eat it with ketchup.",
+    "name": "Kungfu Coder",
+    "brief": "I don't always eat dumplings, but when I do, I eat with Sriracha.",
+    "photo": "assets/samples/po.jpg",
     "phone": "714.555.1234",
     "email": "dude@wheres.mycar.com",
     "linkedin": "linkedin.com/in/imhungry",
@@ -9,34 +10,45 @@
   },
   "experience": [
     {
-      "title": "Founder and CTO",
-      "company": "Unicorn Cockroach",
-      "companyBrief": "Half unicorn, half cockroach, 4 times the fun.",
-      "fromDate": "Jan 2016",
-      "toDate": "present",
-      "location": "Silly Con Valley",
-      "skills": ["Ionic Framework", "Cordova", "Angularjs", "Nodejs", "Yomamajs"],
+      "title": "Spirit Realm Traveler",
+      "company": "That's How We Roll, Corp.",
+      "companyBrief": "Look away! Look away! You can't, can you?",
+      "startDate": "Jan 2016",
+      "endDate": "present",
+      "location": "Secret Panda Village",
+      "skills": ["Skadoosh", "Dragon Warrior"],
       "hilights": [
-        "Built quantum computer with a rusty screw driver, 2 cat pics, and a gallon of Sriracha",
-        "Used said quantum computer to simulate 10x more powerful quantum computer",
-        "Used second quantum computer to build a scalable platform to make ordering pizza easier for celebrities"
+        "Traveled to spirit realm with creative application of Wuxi finger hold",
+        "Defeated Kai and saved the world",
+        "Freed kungfu masters"
       ]
     },
     {
-      "title" : "Software Engineer",
-      "company": "These Dudes Paid Me, Inc.",
-      "companyBrief": "Company that says they value innovation and only hire the best...for cheap",
-      "fromDate": "June 2015",
-      "toDate": "Dec 2015",
-      "location": "Gotham",
-      "skills":["C++", "C#", "Java", "Grunt", "Gulp", "Burp", "Hiccup"],
+      "title" : "Amateur Stair Climber",
+      "company": "So Many Steps, Inc.",
+      "startDate": "Aug 2014",
+      "endDate": "Dec 2015",
+      "location": "Jade Palace",
+      "skills":["Grunt", "Gulp", "Burp", "Hiccup", "Wuxi Finger Hold"],
       "hilights": [
-        "Attended morning meetings",
-        "Involved in lunch meetings",
-        "Participated in afternoon meetings",
-        "Developed super cool software to propel papyrus-based material on complex trajectories of zero displacement, in simulation."
+        "Eat lots of dumplings for breakfast",
+        "Eat lots of dumplings for lunch",
+        "Eat even more dumplings for dinner"
       ]
-    }
+  },
+    {
+      "title" : "Professional Dumpling Eater",
+      "company": "My Daddy's A Bird, LLC",
+      "startDate": "May 2010",
+      "endDate": "July 2014",
+      "location": "Noodle Shop",
+      "skills":["Grunt", "Gulp", "Burp", "Hiccup", "Wuxi Finger Hold"],
+      "hilights": [
+        "Eat lots of dumplings for breakfast",
+        "Eat lots of dumplings for lunch",
+        "Eat even more dumplings for dinner"
+      ]
+  }
   ],
   "skills": [
     {"name": "Thinking With Muh Brainz", "score": "9"},
