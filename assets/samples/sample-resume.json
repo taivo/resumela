@@ -29,11 +29,10 @@
       "startDate": "Aug 2014",
       "endDate": "Dec 2015",
       "location": "Jade Palace",
-      "skills":["Grunt", "Gulp", "Burp", "Hiccup", "Wuxi Finger Hold"],
+      "skills":["Kungfu", "Wuxi Finger Hold", "Stair Crawling"],
       "hilights": [
-        "Eat lots of dumplings for breakfast",
-        "Eat lots of dumplings for lunch",
-        "Eat even more dumplings for dinner"
+        "Train, eat, eat, train, eat, eat, eat some more",
+        "Played with action figures"
       ]
   },
     {
@@ -42,7 +41,7 @@
       "startDate": "May 2010",
       "endDate": "July 2014",
       "location": "Noodle Shop",
-      "skills":["Grunt", "Gulp", "Burp", "Hiccup", "Wuxi Finger Hold"],
+      "skills":["Grunt", "Gulp", "Burp", "Hiccup"],
       "hilights": [
         "Eat lots of dumplings for breakfast",
         "Eat lots of dumplings for lunch",
