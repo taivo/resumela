@@ -286,7 +286,7 @@ span.comma-list:not(:last-child):after{
     display:block;
   }
   .app-canvas{
-    padding: 0 0;
+    padding: 1em 0 0 0;
     background-color: #fff;
   }
   .preview-area{
