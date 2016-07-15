@@ -13,10 +13,10 @@
       "title": "Spirit Realm Traveler",
       "company": "That's How We Roll, Corp.",
       "companyBrief": "Look away! Look away! You can't, can you?",
-      "startDate": "Jan 2016",
+      "startDate": "2016-01-01",
       "endDate": "present",
       "location": "Secret Panda Village",
-      "skills": ["Skadoosh", "Dragon Warrior"],
+      "skills": ["Chi", "Skadoosh", "Dragon Warrior"],
       "hilights": [
         "Traveled to spirit realm with creative application of Wuxi finger hold",
         "Defeated Kai and saved the world",
@@ -26,8 +26,8 @@
     {
       "title" : "Amateur Stair Climber",
       "company": "So Many Steps, Inc.",
-      "startDate": "Aug 2014",
-      "endDate": "Dec 2015",
+      "startDate": "2014-08-01",
+      "endDate": "2015-12-01",
       "location": "Jade Palace",
       "skills":["Kungfu", "Wuxi Finger Hold", "Stair Crawling"],
       "hilights": [
@@ -38,8 +38,8 @@
     {
       "title" : "Professional Dumpling Eater",
       "company": "My Daddy's A Bird, LLC",
-      "startDate": "May 2010",
-      "endDate": "July 2014",
+      "startDate": "2010-05-01",
+      "endDate": "2014-07-01",
       "location": "Noodle Shop",
       "skills":["Grunt", "Gulp", "Burp", "Hiccup"],
       "hilights": [

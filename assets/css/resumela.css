@@ -56,9 +56,13 @@ body{
 .item .date, .item .location, .item .note{
   color: #a8a8a8;
 }
-.item .date, .item .location{
+.item .date{
   display: inline-block;
-  width: 13em;
+  width: 17em;
+}
+.item .location{
+    display: inline-block;
+    width: 10em;
 }
 
 .job-item{
