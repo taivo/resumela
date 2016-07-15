@@ -1,15 +1,29 @@
 <div class='tool-panel'>
   <div class='border-bottom-light' style='padding: 2em 0.5em;border-width:3px;'>
     <md-button ng-click='loadSampleResume()' class='md-primary'>* Reset demo *</md-button>
-    <a class='margin-left-3x' href='https://github.com/taivo/resumela'>Source Code</a>
+    <div class='padding-horiz-2x text-note'>
+        <p>
+            This is a barebone demo only. To fully use resumela, simply clone <a href='https://github.com/taivo/resumela'>the repo</a>,
+            place a json resume file in the "user-data" subdirectory and load it. To customize, just edit the
+            various templates and directives.
+        </p>
+        <p>
+            Usage requirement: familiarity with AngularJS, not meant for mobile.
+        </p>
+    </div>
   </div>
 
   <md-tabs md-dynamic-height md-selected='selectedTab'>
     <md-tab label='Layouts'>
       <md-content class='padding-2x'>
-        <ul style='list-style-type:none;'>
-          <li ng-repeat='(k,v) in activeResume.versions'><md-button class='md-primary border-light' ng-click='switchVersion(k)'>{{k}}</md-button></li>
-        </ul>
+          <p>
+              Click a button to change resume layout
+          </p>
+          <ul style='list-style-type:none;'>
+              <li ng-repeat='(k,v) in activeResume.versions'>
+                  <md-button class='md-primary border-light' ng-click='switchVersion(k)'>{{k}}</md-button>
+              </li>
+          </ul>
       </md-content>
     </md-tab>
     <md-tab label='Content'>
@@ -34,7 +48,7 @@
     </md-tab>
     <md-tab label='Help'>
       <md-content class='padding-2x'>
-        <ul class='text-big' style='color: #555;'>
+        <ul class='text-big text-note'>
           <li class='padding-vert-1x'>R&eacute;sum&eacute;la is intended to cut down resume editing time for users familiar with angularjs</li>
           <li class='padding-vert-1x'>To play with the included sample resume, use this web demo as is</li>
           <li class='padding-vert-1x'>

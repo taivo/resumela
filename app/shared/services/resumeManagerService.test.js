@@ -2,7 +2,7 @@ describe("resumeManagerService", function() {
    var resumeManagerService, $httpBackend;
    var sampleResumeFixture = 'samples/sampleResume';
 
-   function getFixture(key){
+   var getFixture = function(key){
        return window.__fixtures__[key];
    }
 
@@ -33,4 +33,5 @@ describe("resumeManagerService", function() {
 
       $httpBackend.flush();
    });
+
 });
