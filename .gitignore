@@ -2,4 +2,3 @@ node_modules/
 user-data/*
 .DS_Store
 assets/libs/*
-build/
