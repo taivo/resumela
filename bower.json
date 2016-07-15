@@ -1,6 +1,6 @@
 {
   "name": "resumela",
-  "version":"0.1.0",
+  "version": "0.1.0",
   "description": "Separate resume style from content for faster editing",
   "main": "",
   "authors": [
@@ -22,9 +22,10 @@
   ],
   "dependencies": {
     "angular": "1.5.7",
-    "angular-material": "1.0.9",
+    "angular-material": "1.1.0-rc.5",
     "ngstorage": "0.3.10",
-    "ng-json-display": "*"
+    "ng-json-display": "*",
+    "moment": "^2.14.1"
   },
   "devDependencies": {
     "angular-mocks": "1.5.7"

@@ -26,7 +26,7 @@ function(resumeManager){
       }
 
       $scope.loadSampleResume = function(){
-        $scope.$storage.localRes = 'assets/samples/sample-resume.json';
+        $scope.$storage.localRes = 'samples/sample-resume.json';
         $scope.loadLocalResume();
         $scope.$applyAsync();
       }

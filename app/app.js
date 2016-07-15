@@ -12,7 +12,7 @@ angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay'])
       }
     }
 
-    $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
+    $scope.$storage = $localStorage.$default({localRes:'samples/sample-resume.json'});
     $scope.renderLocalResume();
 
     /*
