@@ -7,7 +7,7 @@ function(){
     transclude: true,
     require: '^block',
     scope: {},
-    templateUrl: 'templates/column.html',
+    templateUrl: 'layout/column.html',
     link: function(scope, elm, attrs, blockCtrl) {
       var columnType = blockCtrl.getColumnType(elm);
       scope.isWide = false;

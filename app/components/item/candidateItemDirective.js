@@ -4,7 +4,7 @@ function(){
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'templates/candidate.html',
+    templateUrl: 'item/candidate.html',
     scope: {
       candidate: '='
     }

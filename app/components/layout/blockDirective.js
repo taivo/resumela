@@ -8,7 +8,7 @@ function(){
     scope: {
       columnLayout:'@',
     },
-    templateUrl: 'templates/block.html',
+    templateUrl: 'layout/block.html',
     controller: ['$scope', function($scope) {
       $scope.isSingleColumn = ($scope.columnLayout === 'single' || $scope.columnLayout === 'full');
 

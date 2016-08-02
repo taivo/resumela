@@ -50,7 +50,7 @@ function(){
       $scope.getTemplateUrl = function(){
         var itemTag = itemTypeToTag($scope.itemType);
 
-        var templateUrl = ['templates/items/',itemTag, '.html'].join('');
+        var templateUrl = ['item/',itemTag, '.html'].join('');
         return templateUrl;
       }
     }]

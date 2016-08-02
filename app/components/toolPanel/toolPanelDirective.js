@@ -5,7 +5,7 @@ function(resumeManager){
     restrict: 'E',
     replace: true,
     scope: {},
-    templateUrl: 'templates/toolPanel.html',
+    templateUrl: 'toolPanel/toolPanel.html',
     controller: ['$scope', '$localStorage', function($scope, $localStorage){
       $scope.selectedTab = 0;
       $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});

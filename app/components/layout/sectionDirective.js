@@ -9,6 +9,6 @@ function(){
       header: '@',
       items: '='
     },
-    templateUrl: 'templates/section.html',
+    templateUrl: 'layout/section.html',
   };
 }]);

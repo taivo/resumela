@@ -8,6 +8,6 @@ function(){
       resume:'=',
       resumeLayout:'='
     },
-    templateUrl: 'templates/resume.html'
+    templateUrl: 'layout/resume.html'
   };
 }]);

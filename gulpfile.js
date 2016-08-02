@@ -9,36 +9,56 @@ var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-clean-css');
 var templateCache = require('gulp-angular-templatecache');
 
-var buildPath = 'build';
+var paths = {
+    appRoot: 'app',
+    buildRoot: 'build',
+    templateSrc: ['templates/**/*.html', 'app/components/**/*.html'],
+}
 
-gulp.task('clean', function(){
-    return gulp.src(buildPath + '/*').pipe(rm());
-})
-
-gulp.task('templatecache', ['clean'], function () {
-  return gulp.src('templates/**/*.html')
-    .pipe(templateCache({module:'resumela', root:'templates'}))
-    .pipe(gulp.dest(buildPath));
+gulp.task('templatecache', function () {
+  return gulp.src(paths.templateSrc)
+    .pipe(templateCache({
+        module:'resumela.templates',
+        standalone: true,
+        filename: 'app.templates.js',
+        transformUrl: function(url){
+            //
+            // remove nested 'templates' subdir: foo/templates/bar.html -> foo/bar.html
+            return url.replace(/(.+)\/templates\/(.+)/, '$1/$2');
+        }
+    }))
+    .pipe(gulp.dest(paths.appRoot));
 });
 
-gulp.task('usemin', ['clean'], function() {
+gulp.task('clean', function(){
+    return gulp.src(paths.buildRoot + '/*').pipe(rm());
+});
+
+gulp.task('usemin', ['clean', 'templatecache'], function() {
     return gulp.src('./index.html')
-        .pipe(htmlreplace({templatecache: "templates.js"}))
         .pipe(usemin({
             css: [ minifyCss() ],
             js: [ uglify()]
         }))
-        .pipe(gulp.dest(buildPath));
+        .pipe(gulp.dest(paths.buildRoot));
 });
 
 gulp.task('copysamples', ['clean'], function() {
    return gulp.src('samples/*', {base: '.'})
-        .pipe(gulp.dest(buildPath));
+        .pipe(gulp.dest(paths.buildRoot));
 });
 
 gulp.task('build', ['usemin', 'templatecache', 'copysamples']);
 
 gulp.task('deploy', ['build'], function() {
-  return gulp.src(buildPath + '/**/*')
+  return gulp.src(paths.buildRoot + '/**/*')
         .pipe(ghPages());
 });
+
+gulp.task('watch', function() {
+  gulp.watch(paths.templateSrc, ['templatecache']);
+});
+
+gulp.task('default', ['templatecache'], function(){
+    gulp.start('watch');
+})
