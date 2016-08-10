@@ -3,7 +3,6 @@ var ghPages = require('gulp-gh-pages');
 var htmlreplace = require('gulp-html-replace');
 var rm = require('gulp-rimraf');
 
-
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-clean-css');
@@ -38,7 +37,7 @@ gulp.task('usemin', ['clean', 'templatecache'], function() {
     return gulp.src('./index.html')
         .pipe(usemin({
             css: [ minifyCss() ],
-            js: [ uglify()]
+            js: [ uglify() ]
         }))
         .pipe(gulp.dest(paths.buildRoot));
 });

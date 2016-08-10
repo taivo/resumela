@@ -7,7 +7,7 @@ function(resumeManager){
     scope: {},
     templateUrl: 'toolPanel/toolPanel.html',
     controller: ['$scope', '$localStorage', function($scope, $localStorage){
-      $scope.selectedTab = 0;
+      $scope.selectedTab = 1;
       $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
       $scope.activeResume = resumeManager.activeResume();
 
@@ -31,6 +31,8 @@ function(resumeManager){
         $scope.$applyAsync();
       }
 
+      $scope.templateNames = ['job','education','skill'];
+      $scope.templateName = $scope.templateNames[0];
     }]
   };
 }])

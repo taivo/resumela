@@ -1,12 +1,12 @@
 <div class='resume-layout'>
-  <block column-layout='single' class='resume-header'>
+  <block column-layout='multi-column' class='resume-header'>
     <candidate candidate='resume.candidate'></candidate>
   </block>
 
   <!-- column-layout: single, wide-slim, slim-wide, fifty-fifty -->
   <block column-layout='{{blk.columnLayout}}' ng-repeat='blk in resumeLayout.blocks'>
-    <column ng-repeat='sectionList in blk.columns'>
-      <section header='{{title}}' items='resume.getItems(title)' ng-repeat='title in sectionList'></section>
-    </column>
+      <column ng-repeat='sectionList in blk.columns'>
+          <section header='{{title}}' items='resume.getItems(title)' ng-repeat='title in sectionList'></section>
+      </column>
   </block>
 </div>

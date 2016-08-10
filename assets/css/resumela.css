@@ -334,7 +334,8 @@ input[type=range]::-webkit-slider-thumb {
   border: solid 1px #ddd;
   border-radius: 5px;
   padding: 5px;
-  height: 35em;
+  max-height: 35em;
+  height: auto;
   overflow: scroll;
 }
 .json-key {
@@ -348,5 +349,5 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .ace_editor {
-    height: 200px;
+    height: 35em;
 }

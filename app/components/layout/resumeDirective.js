@@ -1,6 +1,6 @@
 angular.module('resumela')
-.directive('resume', [
-function(){
+.directive('resume', ['$compile','$templateCache',
+function($compile, $templateCache){
   return {
     restrict: 'A',
     replace: true,

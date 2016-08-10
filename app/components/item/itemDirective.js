@@ -9,7 +9,7 @@ function(){
       item : '=',
       itemType: '='
     },
-    controller: ['$scope', function($scope){
+    controller: ['$scope', '$templateCache',function($scope, $templateCache){
       var itemTypeToTag = function(itemType){
         var lower = itemType.toLowerCase();
 
@@ -36,7 +36,6 @@ function(){
           $scope.item.endDateStr   = endM.format('MMM YYYY');
 
 
-
           var years = Math.round(10 * endM.diff(startM, 'years', true)) /10;
           if(years <= 1){
               $scope.item.durationStr = years + ' year';
@@ -51,6 +50,7 @@ function(){
         var itemTag = itemTypeToTag($scope.itemType);
 
         var templateUrl = ['item/',itemTag, '.html'].join('');
+
         return templateUrl;
       }
     }]

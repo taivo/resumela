@@ -24,11 +24,20 @@
                   <md-button class='md-primary border-light' ng-click='switchVersion(k)'>{{k}}</md-button>
               </li>
           </ul>
-
-          <div ui-ace>
-              REFACTOR TO BRING templates into components directory
-          </div>
       </md-content>
+    </md-tab>
+    <md-tab label='Templates'>
+        <md-content class='padding-2x'>
+            <md-input-container>
+                <label>Which template?</label>
+                <md-select ng-model="templateName">
+                    <md-option ng-repeat="templateName in templateNames" value="{{templateName}}">{{templateName}}</md-option>
+                </md-select>
+            </md-input-container>
+
+            <template-editor template-id='layout/resume.html' sample-data='activeResume'></template-editor>
+
+        </md-content>
     </md-tab>
     <md-tab label='Content'>
       <md-content class='padding-2x'>
