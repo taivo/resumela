@@ -1,8 +1,8 @@
-angular.module('resumela')
+angular.module('ngTemplateEditor')
 
 /**
  * @ngdoc directive
- * @module ng
+ * @module resumela
  * @name templateReloader
  *
  * @element ANY
@@ -21,34 +21,10 @@ angular.module('resumela')
         restrict: 'AE',
         link: function(scope, elem, attrs){
             scope.$on('templateChanged', function(){
-
                 //
                 // recompile with element's original scope,
                 // not the scope that comes with this link function
                 $compile(elem)(elem.scope());
-
-                /*
-                var newElem = $compile($templateCache.get(dir.templateUrl))(scope);
-
-                console.log('which template', dir.templateUrl);
-
-                if(scope.$$isolateBindings && Object.keys(scope.$$isolateBindings).length > 0){
-                    console.log('empty');
-                    newElem.removeClass('ng-scope').addClass('ng-isolate-scope');
-                } else console.log('NOT EMPTY');
-
-                elem.replaceWith(newElem); //update DOM
-                elem = newElem; //save current element for next update else elem will be invalidated
-                */
-
-                /*
-                elem.replaceWith($templateCache.get(dir.templateUrl));
-                console.log('elem.html1', elem.html());
-                $compile(elem)(scope);
-
-                console.log('elem.html2', elem.html());
-                console.log('elem2', elem);
-                */
             });
         }
     }

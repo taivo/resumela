@@ -1,5 +1,5 @@
 <div class='tool-panel'>
-  <div class='border-bottom-light' style='padding: 2em 0.5em;border-width:3px;'>
+  <!--div class='border-bottom-light' style='padding: 2em 0.5em;border-width:3px;'>
     <md-button ng-click='loadSampleResume()' class='md-primary'>* Reset demo *</md-button>
     <div class='padding-horiz-2x text-note'>
         <p>
@@ -11,74 +11,20 @@
             Usage requirement: familiarity with AngularJS, not meant for mobile.
         </p>
     </div>
-  </div>
+</div-->
 
   <md-tabs md-dynamic-height md-selected='selectedTab'>
     <md-tab label='Layout'>
-      <md-content class='padding-2x'>
-          <p>
-              Click a button to change resume layout
-          </p>
-          <ul style='list-style-type:none;'>
-              <li ng-repeat='(k,v) in activeResume.versions'>
-                  <md-button class='md-primary border-light' ng-click='switchVersion(k)'>{{k}}</md-button>
-              </li>
-          </ul>
-      </md-content>
+      <md-content class='padding-2x' ng-include="'toolPanel/_layoutDemoPane.html'"></md-content>
     </md-tab>
     <md-tab label='Templates'>
-        <md-content class='padding-2x'>
-            <md-input-container>
-                <label>Which template?</label>
-                <md-select ng-model="templateName">
-                    <md-option ng-repeat="templateName in templateNames" value="{{templateName}}">{{templateName}}</md-option>
-                </md-select>
-            </md-input-container>
-
-            <template-editor template-id='layout/resume.html' sample-data='activeResume'></template-editor>
-
-        </md-content>
+        <md-content class='padding-2x' ng-include="'toolPanel/_templateEditPane.html'"></md-content>
     </md-tab>
     <md-tab label='Content'>
-      <md-content class='padding-2x'>
-        <div class='padding-top-3x'>
-          <md-input-container class='md-block'>
-            <label>Local resume file, relative to index.html</label>
-            <input ng-model="$storage.localRes">
-            <div ng-show='$errors.localRes' class='error'>
-              Unable to load file "{{$storage.localRes}}". Make sure it's in the same path as index.html and does not contain invalid json.
-            </div>
-            <div class='align-right'>
-              <md-button ng-click='loadLocalResume()' class='md-primary' style='border:1px solid #aaa;'>Load Resume</md-button>
-            </div>
-          </md-input-container>
-
-          <json-display object='activeResume'></json-display>
-
-        </div>
-
-      </md-content>
+      <md-content class='padding-2x' ng-include="'toolPanel/_contentEditPane.html'"></md-content>
     </md-tab>
     <md-tab label='Help'>
-      <md-content class='padding-2x'>
-        <ul class='text-big text-note'>
-          <li class='padding-vert-1x'>R&eacute;sum&eacute;la is intended to cut down resume editing time for users familiar with angularjs</li>
-          <li class='padding-vert-1x'>To play with the included sample resume, use this web demo as is</li>
-          <li class='padding-vert-1x'>
-            To edit your own resume, clone <a href='https://github.com/taivo/resumela'>https://github.com/taivo/resumela.git</a>
-            and open "index.html" as a local file. Then use the "Content" tab
-          </li>
-          <li class='padding-vert-1x'>
-            Use the included 'sample-resume.json' to figure out the schema. It's simple and it allows easy experimentation with resume layout.
-          </li>
-          <li class='padding-vert-1x'>
-            Modify any of the included templates or css classes to render/style your resume differently
-          </li>
-          <li class='padding-vert-1x'>
-            Use your browser's print feature to print the resume or export to PDF. CSS rules are already set to hide all non-resume GUI elements.
-          </li>
-        </ul>
-      </md-content>
+      <md-content class='padding-2x' ng-include="'toolPanel/_helpPane.html'"></md-content>
     </md-tab>
   </md-tabs>
 </div>

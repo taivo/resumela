@@ -1,5 +1,5 @@
 angular.module('resumela', ['ngMaterial', 'ngStorage', 'ngJsonDisplay', 'ui.ace',
-                            'resumela.templates'])
+                            'resumela.templates', 'ngTemplateEditor'])
   .controller('ResGenController', ['$scope','$localStorage', 'resumeManager',
   function($scope, $localStorage, resumeManager) {
     $scope.$errors = {};

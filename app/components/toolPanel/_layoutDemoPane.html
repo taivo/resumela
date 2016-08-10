@@ -1,0 +1,8 @@
+<div>
+    <p>Click a button to change resume layout</p>
+    <ul style='list-style-type:none;'>
+        <li ng-repeat='(k,v) in activeResume.versions'>
+            <md-button class='md-primary border-light' ng-click='switchVersion(k)'>{{k}}</md-button>
+        </li>
+    </ul>
+</div>
