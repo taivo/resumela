@@ -1,8 +1,8 @@
 <div>
     <md-input-container>
         <label>Which template?</label>
-        <md-select ng-model="templateName">
-            <md-option ng-repeat="templateName in templateNames" value="{{templateName}}">{{templateName}}</md-option>
+        <md-select ng-model="selectedTemplate">
+            <md-option ng-repeat="templateName in editableTemplates" value="{{templateName}}">{{templateName}}</md-option>
         </md-select>
     </md-input-container>
 

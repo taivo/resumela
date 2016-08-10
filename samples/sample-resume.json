@@ -1,7 +1,7 @@
 {
   "candidate": {
     "name": "Kungfu Coder",
-    "brief": "I don't always eat dumplings, but when I do, I eat them with Sriracha.",
+    "brief": "A panda walks into a bar ... eats shoots and leaves",
     "photo": "samples/po.jpg",
     "phone": "714.555.1234",
     "email": "dude@wheres.mycar.com",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "title" : "Amateur Stair Climber",
+      "title" : "Stair Crawling Engineer",
       "company": "So Many Steps, Inc.",
       "startDate": "2014-08-01",
       "endDate": "2015-12-01",
@@ -53,7 +53,7 @@
     {"name": "Thinking With Muh Brainz", "score": "9"},
     {"name": "Interstellar Day Dreaming", "score": "8"},
     {"name": "Procrastination", "score": 10},
-    {"name": "Writing bug-free code", "score": 9}
+    {"name": "Bamboo Climbing", "score": 9}
   ],
   "education":[
     {
