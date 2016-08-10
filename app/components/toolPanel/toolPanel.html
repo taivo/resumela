@@ -18,7 +18,9 @@
       <md-content class='padding-2x' ng-include="'toolPanel/_layoutDemoPane.html'"></md-content>
     </md-tab>
     <md-tab label='Templates'>
-        <md-content class='padding-2x' ng-include="'toolPanel/_templateEditPane.html'"></md-content>
+        <md-content class='padding-2x'>
+            <template-edit-pane></template-edit-pane>
+        </md-content>
     </md-tab>
     <md-tab label='Content'>
       <md-content class='padding-2x' ng-include="'toolPanel/_contentEditPane.html'"></md-content>

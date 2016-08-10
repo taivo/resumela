@@ -30,9 +30,6 @@ function(resumeManager){
         $scope.loadLocalResume();
         $scope.$applyAsync();
       }
-
-      $scope.templateNames = ['job','education','skill'];
-      $scope.templateName = $scope.templateNames[0];
     }]
   };
 }])
