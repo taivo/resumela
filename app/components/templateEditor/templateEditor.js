@@ -23,7 +23,9 @@ angular.module('ngTemplateEditor', [])
             templateModel: '<'
         },
         link: function(scope, elem, attrs){
-            scope.templateContent = $templateCache.get(scope.templateId) || "";
+            scope.$watch('templateId', function(newId){
+                scope.templateContent = $templateCache.get(newId) || "";
+            });
 
             scope.updateTemplate = function(){
                 $templateCache.put(scope.templateId, scope.templateContent);
