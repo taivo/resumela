@@ -25,10 +25,12 @@ function(){
       }
 
       if($scope.item.startDate && $scope.item.endDate){
-          var startM = moment($scope.item.startDate);
-          var endM   = moment($scope.item.endDate);
+          var stdFormat = 'YYYY-MM-DD';
+          var startM = moment($scope.item.startDate, stdFormat);
+          var endM   = moment($scope.item.endDate, stdFormat);
 
           if(!endM.isValid()){
+              //assume invalid endDate to be 'present' or 'ongoing'
               endM = moment();
           }
 
