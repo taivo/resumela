@@ -8,12 +8,8 @@ function(resumeManager){
     templateUrl: 'toolPanel/toolPanel.html',
     controller: ['$scope', '$localStorage', function($scope, $localStorage){
       $scope.selectedTab = 1;
-      $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
+      $scope.$storage = $localStorage.$default({localRes:'samples/sample-resume.json'});
       $scope.activeResume = resumeManager.activeResume();
-
-      //$scope.switchVersion = function(versionName){
-      //  $scope.activeResume.switchVersion(versionName);
-      //}
 
       $scope.loadLocalResume = function(){
         if($scope.$storage.localRes){

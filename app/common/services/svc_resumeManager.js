@@ -1,5 +1,5 @@
 angular.module('resumela')
-.factory('resumeManager', ['$http', '$q',function($http, $q){
+.factory('resumeManager', ['$http', '$q', '$localStorage', function($http, $q, $localStorage){
   var DATA = {
     hasResume: false,
     activeResume: {
@@ -63,18 +63,15 @@ angular.module('resumela')
     }
   }
 
-  var currentFilename = './samples/sample-resume.json';
+  var $storage = $localStorage.$default({localRes: 'samples/sample-resume.json'});
   return {
-      setCurrentFilename: function(filename){
-          currentFilename = filename;
-      },
       fetchCurrentResume: function(){
           if(DATA.hasResume){
               return $q(function(resolve, reject){
                   resolve(DATA.activeResume);
               })
           } else{
-              return this.loadFromLocalFile(currentFilename);
+              return this.loadFromLocalFile($storage.localRes);
           }
       },
       loadFromLocalFile: function(localFilename){
