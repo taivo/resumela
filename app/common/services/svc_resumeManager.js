@@ -1,10 +1,11 @@
 angular.module('resumela')
 .factory('resumeManager', ['$http', '$q',function($http, $q){
   var DATA = {
+    hasResume: false,
     activeResume: {
       getItems: function(sectionTitle){
         var section = sectionTitle.toLowerCase();
-        return this[section];
+        return this[section] || this[section + 's'];
       },
       _activeVersion: null,
       initActiveVersion: function(){
@@ -62,24 +63,38 @@ angular.module('resumela')
     }
   }
 
+  var currentFilename = './samples/sample-resume.json';
   return {
-    loadFromLocalFile: function(localFilename){
-      return $http.get(localFilename)
-      .then(function successCallback(res) {
-        angular.extend(DATA.activeResume, Helper.standardize(res.data));
+      setCurrentFilename: function(filename){
+          currentFilename = filename;
+      },
+      fetchCurrentResume: function(){
+          if(DATA.hasResume){
+              return $q(function(resolve, reject){
+                  resolve(DATA.activeResume);
+              })
+          } else{
+              return this.loadFromLocalFile(currentFilename);
+          }
+      },
+      loadFromLocalFile: function(localFilename){
+          return $http.get(localFilename)
+            .then(function successCallback(res) {
+                angular.extend(DATA.activeResume, Helper.standardize(res.data));
 
-        DATA.activeResume.initActiveVersion();
-        DATA.activeResume.getActiveLayout();
+                DATA.activeResume.initActiveVersion();
+                DATA.activeResume.getActiveLayout();
+                DATA.hasResume = true;
 
-        return DATA.activeResume;
-        }, function errorCallback(res) {
-          console.error('error: ' + JSON.stringify(res));
-        });
+                return DATA.activeResume;
+            }, function errorCallback(res) {
+                console.error('error: ' + JSON.stringify(res));
+            });
       },
 
-    activeResume: function(){
-      return DATA.activeResume;
-    }
+      activeResume: function(){
+          return DATA.activeResume;
+      }
   }
 }])
 ;

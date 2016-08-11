@@ -2,9 +2,9 @@
     <md-input-container>
         <label>Which template?</label>
         <md-select ng-model="selectedTemplate">
-            <md-option ng-repeat="(name, templateId) in editableTemplates" value="{{templateId}}">{{name}}</md-option>
+            <md-option ng-repeat="template in editableTemplates" ng-value="template">{{template.name}}</md-option>
         </md-select>
     </md-input-container>
 
-    <template-editor template-id='{{selectedTemplate}}' template-model='activeResume'></template-editor>
+    <template-editor template-id='{{selectedTemplate.templateId}}' template-model='resume'></template-editor>
 </div>
