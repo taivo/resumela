@@ -83,6 +83,20 @@
     {"brief": "I once pushed a photon so fast, it moved at the speed of light"}
   ],
   "versions":{
+    "wide-slim":{
+        "default": true,
+        "layout":{
+          "header":{},
+          "blocks":[
+            {
+              "columnLayout": "wide-slim",
+              "columns": [["EXPERIENCE"],
+                          ["SKILLS","PROJECTS", "EDUCATION", "PUBLICATIONS","ACHIEVEMENTS"]
+                        ]
+            }
+          ]
+        }
+    },
     "fifty-fifty":{
       "merges":{},
       "layout":{
@@ -92,20 +106,6 @@
             "columnLayout": "fifty-fifty",
             "columns": [["EXPERIENCE"],
                         ["SKILLS", "PROJECTS", "EDUCATION", "PUBLICATIONS", "ACHIEVEMENTS"]
-                      ]
-          }
-        ]
-      }
-    },
-    "wide-slim":{
-      "default": true,
-      "layout":{
-        "header":{},
-        "blocks":[
-          {
-            "columnLayout": "wide-slim",
-            "columns": [["EXPERIENCE"],
-                        ["SKILLS","PROJECTS", "EDUCATION", "PUBLICATIONS","ACHIEVEMENTS"]
                       ]
           }
         ]
