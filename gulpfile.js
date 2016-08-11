@@ -47,7 +47,20 @@ gulp.task('copysamples', ['clean'], function() {
         .pipe(gulp.dest(paths.buildRoot));
 });
 
-gulp.task('build', ['usemin', 'templatecache', 'copysamples']);
+gulp.task('copy-ace-components', ['clean'], function(){
+    //
+    // ace editor loads individual components dynamically so we can't bundle it.
+    // this task just copy over the component we need. ace will load them dynamically
+    //
+    var aceRoot = './assets/libs/ace-builds/src-min-noconflict';
+    var files = ['mode-html.js', 'worker-html.js'].map(function(filename){
+        return [aceRoot, filename].join('/');
+    })
+    return gulp.src(files)
+        .pipe(gulp.dest(paths.buildRoot + '/ace-editor'));
+});
+
+gulp.task('build', ['usemin', 'templatecache', 'copysamples', 'copy-ace-components']);
 
 gulp.task('deploy', ['build'], function() {
   return gulp.src(paths.buildRoot + '/**/*')

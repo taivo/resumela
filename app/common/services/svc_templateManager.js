@@ -17,4 +17,4 @@ angular.module('resumela')
         }
     };
     return templateMan;
-}])
+}]);
