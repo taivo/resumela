@@ -9,14 +9,11 @@ angular.module('resumela')
             scope.selectedTemplate = scope.editableTemplates[0];
 
             scope.$watch('selectedTemplate', function(selected){
-                console.log('selected', selected);
-                if(selected){
-                    resumeManager.fetchCurrentResume()
-                        .then(function(resume){
-                            scope.templateModel = resume.getItems(selected.name)[0];
-                            scope.$applyAsync();
-                        });
-                }
+                resumeManager.fetchCurrentResume()
+                    .then(function(resume){
+                        scope.templateModel = resume.getItems(selected.name)[0];
+                        scope.$applyAsync();
+                    });
             });
         }
     }

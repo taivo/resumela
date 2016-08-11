@@ -27,6 +27,12 @@ angular.module('ngTemplateEditor', [])
                 scope.templateContent = $templateCache.get(newId) || "";
             });
 
+            scope.$watch('templateModel', function(newModel){
+                if(newModel){
+                    scope.modelKeys = Object.keys(newModel).sort().join(', ');
+                }
+            });
+
             scope.updateTemplate = function(){
                 $templateCache.put(scope.templateId, scope.templateContent);
                 $rootScope.$broadcast('templateChanged', scope.templateId);
