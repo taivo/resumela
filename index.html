@@ -20,7 +20,7 @@
 
     <md-content class='app-canvas'>
       <div layout='row' ng-controller='ResGenController'>
-        <div class='preview-area'>
+        <div class='preview-area' template-reloader>
           <div resume='activeResume' resume-layout='activeResume.getActiveLayout()' ng-cloak></div>
         </div>
 
@@ -31,7 +31,5 @@
     </md-content>
 
     <script src="bundle.min.js"></script>
-
-    <script src="templates.js"></script>
   </body>
 </html>
