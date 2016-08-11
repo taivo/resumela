@@ -55,7 +55,8 @@ gulp.task('copy-ace-components', ['clean'], function(){
     var aceRoot = './assets/libs/ace-builds/src-min-noconflict';
     var files = ['mode-html.js', 'worker-html.js'].map(function(filename){
         return [aceRoot, filename].join('/');
-    })
+    });
+    
     return gulp.src(files)
         .pipe(gulp.dest(paths.buildRoot + '/ace-editor'));
 });
