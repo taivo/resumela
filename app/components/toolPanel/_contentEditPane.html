@@ -6,10 +6,10 @@
       Unable to load file "{{$storage.localRes}}". Make sure it's in the same path as index.html and does not contain invalid json.
     </div>
     <div class='align-right'>
-      <md-button ng-click='loadLocalResume()' class='md-primary' style='border:1px solid #aaa;'>Load Resume</md-button>
+        <md-button ng-click='loadSampleResume()' style='margin-right:1em;'>Reset To Sample Resume</md-button>
+        <md-button ng-click='loadLocalResume()' class='md-primary'>Load Resume</md-button>
     </div>
   </md-input-container>
 
   <json-display object='activeResume'></json-display>
-
 </div>

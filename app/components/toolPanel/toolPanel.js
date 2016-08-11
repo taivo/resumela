@@ -11,9 +11,9 @@ function(resumeManager){
       $scope.$storage = $localStorage.$default({localRes:'sample-resume.json'});
       $scope.activeResume = resumeManager.activeResume();
 
-      $scope.switchVersion = function(versionName){
-        $scope.activeResume.switchVersion(versionName);
-      }
+      //$scope.switchVersion = function(versionName){
+      //  $scope.activeResume.switchVersion(versionName);
+      //}
 
       $scope.loadLocalResume = function(){
         if($scope.$storage.localRes){
