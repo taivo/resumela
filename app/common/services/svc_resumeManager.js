@@ -77,7 +77,28 @@ angular.module('resumela')
       loadFromLocalFile: function(localFilename){
           return $http.get(localFilename)
             .then(function successCallback(res) {
-                angular.extend(DATA.activeResume, Helper.standardize(res.data));
+                var data = {}
+                if(res.data.meta){
+                    //newer resume format
+                    data.candidate = res.data.candidate;
+
+                    var sections = res.data.sections;
+
+                    data.experience = sections.experience.items;
+                    data.skills = sections.skill.items;
+                    data.projects = sections.project.items;
+                    data.education = sections.education.items;
+                    data.achievements = sections.achievement.items;
+                    data.publications = sections.publication.items;
+
+                    data.versions = res.data.layouts;
+                    
+                    console.log('data', data);
+                } else{
+                    data = res.data;
+                }
+
+                angular.extend(DATA.activeResume, Helper.standardize(data));
 
                 DATA.activeResume.initActiveVersion();
                 DATA.activeResume.getActiveLayout();
