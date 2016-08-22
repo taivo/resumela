@@ -11,6 +11,7 @@ angular.module('resumela')
             scope.$watch('selectedTemplate', function(selected){
                 resumeManager.fetchCurrentResume()
                     .then(function(resume){
+                        console.log('RRRRR', resume);
                         scope.templateModel = resume.getItems(selected.name)[0];
                         scope.$applyAsync();
                     });

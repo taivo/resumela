@@ -1,5 +1,86 @@
 angular.module('resumela')
 .factory('resumeManager', ['$http', '$q', '$localStorage', function($http, $q, $localStorage){
+
+    var $storage = $localStorage.$default({localRes: 'samples/sample-resume.json'});
+
+    var ResumeContent = function(){
+
+    };
+
+    var ResumeLayout = function(){
+        return {}
+    };
+
+    var Resume = function(){
+        return {
+            meta: {},
+            content: {},
+            layout: {},
+            hasContent: function(){
+                return this.content.hasOwnProperty('candidate');
+            },
+            getSection: function(key){
+                return this.content.sections[key];
+            },
+            getSectionItems: function(key){
+                return this.content.sections.items;
+            },
+            clearAll: function(){
+                this.meta = {};
+                this.content = {};
+                this.layout = {};
+            },
+            loadJson: function(jsonObj){
+                this.clearAll();
+
+                RES.meta = jsonObj.meta;
+                RES.content = {candidate: jsonObj.candidate, sections: jsonObj.sections};
+
+                RES.layout = angular.extend({name: RES.meta.layout}, RES.layouts)
+            }
+        }
+    }
+
+    var RES = new Resume();
+
+    return {
+        fetchCurrentResume: function(){
+            if(RES.hasContent()){
+                return $q(function(resolve, reject){
+                    resolve(RES);
+                })
+            } else{
+                return this.loadFromLocalFile($storage.localRes);
+            }
+        },
+        loadFromLocalFile: function(localFilename){
+            return $http.get(localFilename)
+                .then(function successCallback(res) {
+                    console.log('loaded local file', res.data);
+
+                    RES.loadJson(res.data);
+
+                    console.log(RES);
+                    return RES;
+                    //angular.extend(DATA.activeResume, Helper.standardize(res.data));
+                    //DATA.activeResume.initActiveVersion();
+                    //DATA.activeResume.getActiveLayout();
+                    //DATA.hasResume = true;
+
+                    //return DATA.activeResume;
+                }, function errorCallback(res) {
+                    console.error('Error loading resume from file: ' + JSON.stringify(res));
+                });
+        },
+
+        activeResume: function(){
+            return RES;
+        }
+    }
+}]);
+
+
+/*
   var DATA = {
     hasResume: false,
     activeResume: {
@@ -54,6 +135,8 @@ angular.module('resumela')
         return angular.extend({}, sk, {score: 10 * Number(sk.score)});
       };
 
+      console.log(rawResume)
+
       return angular.extend({
         jobs: rawResume.experience,
         degrees: rawResume.education
@@ -62,36 +145,4 @@ angular.module('resumela')
       });
     }
   }
-
-  var $storage = $localStorage.$default({localRes: 'samples/sample-resume.json'});
-  return {
-      fetchCurrentResume: function(){
-          if(DATA.hasResume){
-              return $q(function(resolve, reject){
-                  resolve(DATA.activeResume);
-              })
-          } else{
-              return this.loadFromLocalFile($storage.localRes);
-          }
-      },
-      loadFromLocalFile: function(localFilename){
-          return $http.get(localFilename)
-            .then(function successCallback(res) {
-                angular.extend(DATA.activeResume, Helper.standardize(res.data));
-
-                DATA.activeResume.initActiveVersion();
-                DATA.activeResume.getActiveLayout();
-                DATA.hasResume = true;
-
-                return DATA.activeResume;
-            }, function errorCallback(res) {
-                console.error('error: ' + JSON.stringify(res));
-            });
-      },
-
-      activeResume: function(){
-          return DATA.activeResume;
-      }
-  }
-}])
-;
+  */
